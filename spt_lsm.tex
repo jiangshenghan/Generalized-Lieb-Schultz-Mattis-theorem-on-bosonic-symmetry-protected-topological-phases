@@ -6,7 +6,7 @@
 %  4)  latex apssamp.tex
 %
 \documentclass[%
- reprint,
+  reprint,
 %superscriptaddress,
 %groupedaddress,
 %unsortedaddress,
@@ -17,8 +17,8 @@
 %nofootinbib,
 %nobibnotes,
 %bibnotes,
- amsmath,amssymb,
- aps,pra,
+  amsmath,amssymb,
+  aps,pra,
 %prb,
 %rmp,
 %prstab,
@@ -68,14 +68,14 @@
 \date{\today}
 
 \begin{abstract}
-We propose and proof a generalized Lieb-Schultz-Mattis~(LSM) theorem for symmetry protected topological~(SPT) phases on boson/spin models in any dimensions.
-The ``conventional'' LSM theorem, e.g. spin-1/2 per unit cell on square lattice, disallows symmetric short-range-entangled~(SRE) phase. 
-Here, we focus on systems with fractional spins, but have no LSM anomaly. 
-Thus, it is possible to have symmetric SRE phases in the long wavelength.
-We show that, symmetric SRE phases obtained in these systems must be nontrivial SPT phases of both on-site and spatial symmetries.
-Depending on models, they can be either strong or higher-order SPT phases, characterized by nontrivial edge/corner states.
-Furthermore, given global symmetry group and fractional spins, we are able to determine all possible SPT phases by using a spectral sequence expansion of group cohomology.
-We also provide examples in various dimensions, and discuss possible physical realization of these SPT phases based on topological defects/quasiparticles condensation picture.
+  We propose and proof a generalized Lieb-Schultz-Mattis~(LSM) theorem for symmetry protected topological~(SPT) phases on boson/spin models in any dimensions.
+  The ``conventional'' LSM theorem, e.g. spin-1/2 per unit cell on square lattice, disallows symmetric short-range-entangled~(SRE) phase. 
+  Here, we focus on systems with fractional spins, but have no LSM anomaly. 
+  Thus, it is possible to have symmetric SRE phases in the long wavelength.
+  We show that, symmetric SRE phases obtained in these systems must be nontrivial SPT phases of both on-site and spatial symmetries.
+  Depending on models, they can be either strong or higher-order SPT phases, characterized by nontrivial edge/corner states.
+  Furthermore, given global symmetry group and fractional spins, we are able to determine all possible SPT phases by using a spectral sequence expansion of group cohomology.
+  We also provide examples in various dimensions, and discuss possible physical realization of these SPT phases based on topological defects/quasiparticles condensation picture.
 \end{abstract}
 
 \maketitle
@@ -141,8 +141,8 @@ To make the discussion more transparent, it is better to have a concrete model i
 Let us consider Hamiltonian in the following form:
 \begin{align}
   H=-\sum_j\Big[ &J_1\,\mu^z_{2j-1}(\mu^z_{2j})^\dg\nu^x_{2j}+J_2\,\nu^x_{2j}(\mu_{2j}^z)^\dg\mu_{2j+1}^z+ J_3\,\nu^x_{2j+1} \notag\\
-&+h_1\,\mu^x_{2j}(\nu^z_{2j})^2+h_2\,\nu_{2j}^z\mu^x_{2j+1}\nu^z_{2j+2}+h.c. \Big] +\cdots
-\label{eq:z4z4_reflection_1dspt_ham}
+  &+h_1\,\mu^x_{2j}(\nu^z_{2j})^2+h_2\,\nu_{2j}^z\mu^x_{2j+1}\nu^z_{2j+2}+h.c. \Big] +\cdots
+  \label{eq:z4z4_reflection_1dspt_ham}
 \end{align}
 Here $\mu$'s and $\nu$'s are $4\times4$ matrix, which acts as
 \begin{align}
@@ -470,7 +470,7 @@ This SPT-LSM theorem can be understood from anyon condensation in a symmetric ga
     Details of condensation mechanism are presented in Appendix~\ref{subapp:anyon_condensation}.
   \item As we have mentioned, the symmetric gauge theory must be realized in a lattice with the ``parent" LSM theorem. For the symmetric gauge theory to ``resolve" the LSM constraint, we let the gauge charge $e$ transform projectively under inversion symmetry:
     \begin{align}
-     \II^2\circ e=-e~;\notag\\
+      \II^2\circ e=-e~;\notag\\
       \label{}
     \end{align}
     The onsite symmetry fractionalization pattern is still given by Eq.~(\ref{eq:z2z2t_set_before_cond}).
@@ -498,28 +498,28 @@ However, the above anyon-condensation argument does not exclude the possibility 
 
 Without loss of generality, we consider a square lattice model, where Ising charges (neutral under time reversal $\TT$) live on each lattice site ${\bf r}=(x,y)\in\mathbb{Z}^2$. Besides, there is a Ising-neutral spin-$1/2$, which is a projective representation of time reversal symmetry $\TT$, living on each plaquette center $(x+\frac12,y+\frac12)$. The magnetic inversion symmetry $\tilde\II$ is implemented as
 \begin{eqnarray}
-&\tilde\II\equiv\big[\prod_{\bf r}(s_{\bf r})^y\big]\cdot\II,\\
-&(x,y)\overset{\II}\longrightarrow(1-x,1-y).\notag
+  &\tilde\II\equiv\big[\prod_{\bf r}(s_{\bf r})^y\big]\cdot\II,\\
+  &(x,y)\overset{\II}\longrightarrow(1-x,1-y).\notag
 \end{eqnarray}
 where we have chosen the inversion center to be each plaquette center. It is straightforward to check that
 $\tilde\II^2=\prod_{\bf r}s_{\bf r}=s$ is indeed satisfied, where $s_{\bf r}$ denotes $Z_2$ spin rotation on each site ${\bf r}$. 
 
 One can always embed the $Z_2$ Ising symmetry $s$ in a $U(1)$ group, for example by choosing 
 \begin{eqnarray}
-s=e^{i\pi\hat Q},~~~s^2=e^{2\pi i\hat Q}=1,\\
-\notag U(1)\equiv\{e^{i\phi\hat Q}|0\leq\phi<2\pi\}.
+  s=e^{i\pi\hat Q},~~~s^2=e^{2\pi i\hat Q}=1,\\
+  \notag U(1)\equiv\{e^{i\phi\hat Q}|0\leq\phi<2\pi\}.
 \end{eqnarray}
 The magnetic inversion symmetry $\tilde\II$ implements the following constraint on the $U(1)$ vector potential
 \begin{eqnarray}
-\vec A(1-x,1-y)=-\vec A(x,y)+(0,\pi).
+  \vec A(1-x,1-y)=-\vec A(x,y)+(0,\pi).
 \end{eqnarray}
 which has the following solution in the Landau gauge
 \begin{eqnarray}
-\vec A(x,y)=(0,\pi x)
+  \vec A(x,y)=(0,\pi x)
 \end{eqnarray}
 This implies the presence of a $\pi$ flux (i.e. an Ising symmetry flux) in each plaquette, in addition to the spin-$1/2$ at the plaquette center. Notice that in addition to the magnetic inversion symmetry $\tilde\II$, the system also preserves magnetic translation symmetries, for example 
 \begin{eqnarray}
-\tilde T_x=\big[\prod_{\bf r}(s_{\bf r})^y\big]\cdot T_x,~~~\tilde T_y=T_y.
+  \tilde T_x=\big[\prod_{\bf r}(s_{\bf r})^y\big]\cdot T_x,~~~\tilde T_y=T_y.
 \end{eqnarray}
 When put on a cylinder with infinite length $L_x\longrightarrow+\infty$ and an \emph{odd} circumference $L_y=$~odd, the boundary condition along $\hat y$ direction oscillates between periodic and anti-periodic boundary conditions between different columns $x=$~even and $x=$~odd. Therefore by analyzing its entanglement spectrum at two different cuts $\bar x=\epsilon$ and $\bar x=1-\epsilon$ related by inversion symmetry $\tilde\II$, we can use the same argument in Ref.\cite{Wu2017,Lu2017b,YangJiangVishwanathRan2018}, we can show a gapped symmetric ground state cannot be a trivial product state, but instead has to be a SPT phases constructed by decorating $Z_2^s$ domain wall with 1d $Z_2^\TT$ SPT phase. 
 
@@ -555,8 +555,8 @@ Now, let us be more precise about symmetry properties of this QSL.
 Under global symmetry $U_s(1)\times Z_2^\TT$, we require the transformation rule as
 \begin{align}
   U_s(\theta)&: b_{g}\rightarrow \ee^{\ii\sigma^z\frac{\theta}{2}}\cdot b_{g}~,\quad M_g\rightarrow M_g~;\notag\\
-\TT&: b_{g}\rightarrow \sigma^x \cdot b_{g}~,\quad M_g\rightarrow M_g^\dg~,\quad \ii\rightarrow-\ii~.
-\label{eq:U1_QSL_charge_monopole_sym_action}
+  \TT&: b_{g}\rightarrow \sigma^x \cdot b_{g}~,\quad M_g\rightarrow M_g^\dg~,\quad \ii\rightarrow-\ii~.
+  \label{eq:U1_QSL_charge_monopole_sym_action}
 \end{align}
 where $b_g=(b_{g\uparrow},b_{g\downarrow})^\mathrm{t}$ is a two component operator with spin index.
 We point out an important distinction between onsite unitary and anti-unitary symmetries.
@@ -565,9 +565,9 @@ However, for under onsite anti-unitary action, if gauge charges transform to the
 
 It is possible to realize this $U_g(1)$ QSL by a local spin-1/2 model with symmetry action on spin operator $\vec{S}$ as
 \begin{align}
-U_s(\theta)&: S^+\rightarrow \ee^{-\ii\theta} S^+,\quad S^z\rightarrow S^z~,\notag\\
-\TT&: S^{\pm}\rightarrow S^{\mp},\quad S^z\rightarrow-S^z,\quad \ii\rightarrow-\ii~.
-\label{eq:3+1_spin_sym}
+  U_s(\theta)&: S^+\rightarrow \ee^{-\ii\theta} S^+,\quad S^z\rightarrow S^z~,\notag\\
+  \TT&: S^{\pm}\rightarrow S^{\mp},\quad S^z\rightarrow-S^z,\quad \ii\rightarrow-\ii~.
+  \label{eq:3+1_spin_sym}
 \end{align}
 Namely, symmetry operators are
 \begin{align}
@@ -703,26 +703,26 @@ There are many equivalent definitions of group cohomology for group $G$.
 In this paper, we mainly use definition based on the homogeneous cochains.
 A $n$-cochain $\phi$ with coefficient $M$ in is a function that maps $n+1$ tuples $(g_0,g_1,\cdots,g_{n})$ of elements of G, to an abelian group $M$:
 \begin{align}
-\phi(g_0,\cdots,g_{n})\in M~,
+  \phi(g_0,\cdots,g_{n})\in M~,
 \end{align}
 which is invariant under $G$-action: $g\circ\phi=\phi~,~\forall g\in G~$. 
 To see the definition of $G$-action on $\phi$, we need $G$-action on $(g_0,g_1,...,g_{n})$, where
 \begin{align}
-g\cdot(g_0,g_1,\cdots,g_{n})=(gg_0,gg_1,\cdots,gg_{n})~,\ \forall g\in G
-\label{eq:group_tuple_sym_act}
+  g\cdot(g_0,g_1,\cdots,g_{n})=(gg_0,gg_1,\cdots,gg_{n})~,\ \forall g\in G
+  \label{eq:group_tuple_sym_act}
 \end{align}
 as well as definition of $G$-action on $M$, labeled as $\rho$, which is required to be consistent with group operation of $M$:
 \begin{align}
-\rho(g) (m_1+m_2)=\rho(g) m_1+\rho(g) m_2,\ \forall g\in G,\ \ m_1, m_2\in M
+  \rho(g) (m_1+m_2)=\rho(g) m_1+\rho(g) m_2,\ \forall g\in G,\ \ m_1, m_2\in M
 \end{align}
 Then, $G$-action is defined "diagonally" on $\phi$:
 \begin{align}
-(g\circ\phi)(g_0,g_1,\cdots,g_{d+1})\equiv \rho(g) \phi(g^{-1}g_0,g^{-1}g_1,\cdots,g^{-1}g_{n}) 
+  (g\circ\phi)(g_0,g_1,\cdots,g_{d+1})\equiv \rho(g) \phi(g^{-1}g_0,g^{-1}g_1,\cdots,g^{-1}g_{n}) 
 \end{align}
 Thus, invariance of homogeneous n-cochain $\phi$ under $\rho(g)$ action is equivalent to say that
 \begin{align}
-\rho(g)\phi(g_0,g_1,\cdots,g_n)=\phi(gg_0,gg_1,\cdots,gg_n)
-\label{eq:homo_cochain_def}
+  \rho(g)\phi(g_0,g_1,\cdots,g_n)=\phi(gg_0,gg_1,\cdots,gg_n)
+  \label{eq:homo_cochain_def}
 \end{align}
 
 In many cases, $M$ is chosen to be  $U(1)$.
@@ -738,22 +738,22 @@ We also use $M_\TT$, $M_P$ and $M_{P\TT}$ to denote coefficient with the corresp
 All n-cochains form an abelian group, equipped with trivial $G$-action, denoted by $C^n[G,M_X]$.
 We now define a coboundary map $\dd^n:C^n[G,M_X]\rightarrow C^{n+1}[G,M_X]$ as
 \begin{align}
-\dd^n\phi(g_0,\cdots,g_{n+1})=\sum_{k=0}^{p+1}(-1)^k\phi(g_0,\cdots,\hat{g}_k,\cdots,g_{n+1})
-\label{eq:group_coboundary_operator}
+  \dd^n\phi(g_0,\cdots,g_{n+1})=\sum_{k=0}^{p+1}(-1)^k\phi(g_0,\cdots,\hat{g}_k,\cdots,g_{n+1})
+  \label{eq:group_coboundary_operator}
 \end{align}
 where $\hat{g_k}$ means the element $g_k$ is skipped.
 The superscript $n$ in $\dd^n$ denotes the cochain space it acts upon, and we often omit it when it can be determined from the context.
 The coboundary operator satisfies the condition
 \begin{align}
-\dd^n \dd^{n-1}=0
-\label{eq:dd=0}
+  \dd^n \dd^{n-1}=0
+  \label{eq:dd=0}
 \end{align}
 Hence, linked by $\dd^n$, the cochain spaces form a cochain complex:
 \begin{widetext}
-\begin{align}
-\cdots\rightarrow C^{n-1}[G,M_X]\xrightarrow{\dd^{n-1}} C^n[G,M_X]\xrightarrow{\dd^{n}} C^{n+1}[G,M_X]\rightarrow\cdots
-\label{eq:cochain_complex}
-\end{align}
+  \begin{align}
+    \cdots\rightarrow C^{n-1}[G,M_X]\xrightarrow{\dd^{n-1}} C^n[G,M_X]\xrightarrow{\dd^{n}} C^{n+1}[G,M_X]\rightarrow\cdots
+    \label{eq:cochain_complex}
+  \end{align}
 \end{widetext}
 where we set $C^n[G,M_X]=0$ for $n<0$.
 
@@ -761,7 +761,7 @@ We define n-cocycle $Z^n[G,M_X]\equiv\ker \dd^n$ and n-coboundary $B^n[G,M_x]\eq
 According to Eq.~(\ref{eq:dd=0}), $B^n[G,M_X]\subseteq Z^n[G,M_X]\subseteq C^n[G,M_X]$.
 The group cohomology of $G$ is defined as a subquotient abelian group of $C^n[G,M_X]$:
 \begin{align}
-H^n[G,M_X]=Z^n[G,M_X]/B^n[G,M_X]
+  H^n[G,M_X]=Z^n[G,M_X]/B^n[G,M_X]
 \end{align}
 
 \subsection{Bosonic SPT phase from group cohomology}
@@ -781,25 +781,25 @@ Symmetry acts on local Hilbert space as $g|g_i\rangle=|gg_i\rangle$.
 Let us first consider the case where the underlying manifold is closed, i.e. it has no boundary.
 Given $\phi\in C^{d+1}[SG_0,U(1)_\TT]$, one can construct a physical wavefunction as
 \begin{widetext}
-\begin{align}
-  |\Psi[\phi]\rangle=\sum_{\{g_i\}}\prod_{\Delta_{i_1\ldots i_{d+1}}}\exp\left[ \ii s(i_1,\cdots,i_{d+1})\phi(1,g_{i_1},\cdots,g_{i_{d+1}})\right]|g_1,g_2,\cdots,g_N\rangle
-\label{eq:wf_from_cochain}
-\end{align}
-where $N$ is number of vertices, and $i_1<i_2<\cdots<i_d$ labels ordered vertices of some $d$-simplex.
-The product runs over all $d$-dimensional simplices in the lattice.
-And $s(i_1,\cdots,i_{d+1})=\pm1$ denotes whether the orientation of the simplex determined from the branching structures is the same or opposite to an overall orientation of the underlying manifold.
-The orientation of simplex $\Delta_{i_1\ldots i_d}$ is determined by its branching structure: a $d$-dimensional local coordinate system is determined as
-\begin{align}
-  \{\vec{e}_1,\cdots,\vec{e}_d\}\equiv\{\overrightarrow{i_1i_2},\cdots,\overrightarrow{i_di_{d+1}}\}~,
-  \label{eq:branch_local_coord}
-\end{align}
-and this local coordinate $\{\vec{e}_i\}$ determines the orientation of the simplex.
+  \begin{align}
+    |\Psi[\phi]\rangle=\sum_{\{g_i\}}\prod_{\Delta_{i_0\ldots i_{d}}}\exp\left[ \ii s(i_0,\cdots,i_{d})\phi(1,g_{i_0},\cdots,g_{i_{d}})\right]|g_1,g_2,\cdots,g_N\rangle
+    \label{eq:wf_from_cochain}
+  \end{align}
+  where $N$ is number of vertices, and $i_0<i_1<\cdots<i_d$ labels ordered vertices of some $d$-simplex.
+  The product runs over all $d$-dimensional simplices in the lattice.
+  And $s(i_0,\cdots,i_{d})=\pm1$ denotes whether the orientation of the simplex determined from the branching structures is the same or opposite to an overall orientation of the underlying manifold.
+  The orientation of simplex $\Delta_{i_0\ldots i_d}$ is determined by its branching structure: a $d$-dimensional local coordinate system is determined as
+  \begin{align}
+    \{\vec{e}_1,\cdots,\vec{e}_d\}\equiv\{\overrightarrow{i_0i_1},\cdots,\overrightarrow{i_{d-1}i_{d}}\}~,
+    \label{eq:branch_local_coord}
+  \end{align}
+  and this local coordinate $\{\vec{e}_i\}$ determines the orientation of the simplex.
 
-Under $g_0\in SG_0$ action, we have
-\begin{align}
-  g_0|\Psi[\phi]\rangle=\sum_{\{g_i\}}\prod_{\Delta_{i_1\ldots i_{d+1}}}\exp\left[ \ii s(i_1,\cdots,i_{d+1})\phi(g_0,g_{i_1},\cdots,g_{i_{d+1}})\right]|g_1,g_2,\cdots,g_N\rangle
-\label{eq:sym_action_wf_from_cochain}
-\end{align}
+  Under $g_0\in SG_0$ action, we have
+  \begin{align}
+    g_0|\Psi[\phi]\rangle=\sum_{\{g_i\}}\prod_{\Delta_{i_0\ldots i_{d}}}\exp\left[ \ii s(i_0,\cdots,i_{d})\phi(g_0,g_{i_0},\cdots,g_{i_{d}})\right]|g_1,g_2,\cdots,g_N\rangle
+    \label{eq:sym_action_wf_from_cochain}
+  \end{align}
 \end{widetext}
 where we use Eq.~(\ref{eq:homo_cochain_def}) to derive this result.
 Notice that the absence of $\rho_T(g_0)$ is due to an additional complex conjugate action on $\ii$ when $g_0$ is time reversal odd.
@@ -823,25 +823,25 @@ The interphase, labeled as $\partial B_1=B_1\cap B_2$, is composed by $d-1$-simp
 A generic boundary state can be generated by attaching some $d$-cochain $\varphi$ to $\partial B_1$, as we will see in the following discussion.
 
 \begin{widetext}
-Wavefunction for the whole system can be expressed as
-\begin{align}
-  |\Psi[\phi_1,\phi_2,\varphi]\rangle=\sum_{\{g_i\}}\Phi_{bulk}^{\phi_1}(\{g_i|i\in B_1\}) \Phi_{bulk}^{\phi_2}(\{g_i|i\in B_2\})
-  \Phi_{bdry}^{\varphi}(\{g_i|i\in \partial B_1\})|g_1,g_2,\cdots,g_N\rangle~.
-  \label{}
-\end{align}
-The bulk wavefunction reads
-\begin{align}
-  \Phi_{bulk}^{\phi_t}(\{g_i|i\in B_t\})=\prod_{\Delta_{i_1\ldots i_d}\in B_t}\exp\left[ \ii s(i_1,\cdots,i_{d+1})\phi_t(1,g_{i_1},\cdots,g_{i_{d+1}})\right]~,\quad t=1,2
-  \label{}
-\end{align}
-where $s(i_1,\cdots,i_{d+1})=\pm1$ denotes whether the orientation of the simplex is the same or opposite to orientation of $B_t$.
+  Wavefunction for the whole system can be expressed as
+  \begin{align}
+    |\Psi[\phi_1,\phi_2,\varphi]\rangle=\sum_{\{g_i\}}\Phi_{bulk}^{\phi_1}(\{g_i|i\in B_1\}) \Phi_{bulk}^{\phi_2}(\{g_i|i\in B_2\})
+    \Phi_{bdry}^{\varphi}(\{g_i|i\in \partial B_1\})|g_1,g_2,\cdots,g_N\rangle~.
+    \label{}
+  \end{align}
+  The bulk wavefunction reads
+  \begin{align}
+    \Phi_{bulk}^{\phi_t}(\{g_i|i\in B_t\})=\prod_{\Delta_{i_0\ldots i_d}\in B_t}\exp\left[ \ii s(i_0,\cdots,i_{d})\phi_t(1,g_{i_0},\cdots,g_{i_{d}})\right]~,\quad t=1,2
+    \label{}
+  \end{align}
+  where $s(i_0,\cdots,i_{d})=\pm1$ denotes whether the orientation of the simplex is the same or opposite to orientation of $B_t$.
 
-The boundary wavefunction is
-\begin{align}
-  \Phi_{bdry}^{\varphi}(\{g_i|i\in \partial B_1\})&=\prod_{\Delta_{i_1\ldots i_{d}}\in \partial B_1}\exp\left[ \ii s(i_1,\cdots,i_{d})\varphi(1,g_{i_1},\cdots,g_{i_{d}})\right]
-  \label{}
-\end{align}
-Here, $s(i_1,\cdots,i_{d})=+1~(-1)$ when orientation of $d-1$ simplices $\Delta_{i_1\ldots i_{d}}$ is consistent~(inconsistent) with the induced orientation of boundary $\partial B_1$.
+  The boundary wavefunction is
+  \begin{align}
+    \Phi_{bdry}^{\varphi}(\{g_i|i\in \partial B_1\})&=\prod_{\Delta_{i_0\ldots i_{d-1}}\in \partial B_1}\exp\left[ \ii s(i_0,\cdots,i_{d-1})\varphi(1,g_{i_0},\cdots,g_{i_{d-1}})\right]
+    \label{}
+  \end{align}
+  Here, $s(i_0,\cdots,i_{d-1})=+1~(-1)$ when orientation of $d-1$ simplices $\Delta_{i_0\ldots i_{d-1}}$ is consistent~(inconsistent) with the induced orientation of boundary $\partial B_1$.
 \end{widetext}
 For simplicity, let us consider the case where the underlying manifold is a $d$-sphere, and its triangulation is given by faces of a single $d+1$-simplex, which are identified as $d+2$ $d$-simplices.
 $\phi_1$ SPT phase sits on simplex $\Delta_{12\ldots {d+1}}$, while $\phi_2$ SPT phase occupies other $d$-simplices.
@@ -903,178 +903,196 @@ There are totally $N$ sites~(vertices) in this system, labeled as $\{1,\cdots,N\
 This labelling induce a branching structure, which is a set of orientations on all links between vertices, satisfying the condition that the links do not form any oriented loops.
 And the link orientation is given by an arrow starting from the end vertex labeled by the smaller number.
 
-Elements of $Y_p$ consist of $p+1$ sites, and for $p$-simplex $\Delta$ with vertices $\{i_1,\cdots,i_{p+1}\}$, where $i_1<\cdots<i_{p+1}$, we label it as $[i_1\cdots i_{p+1}]$.
-Orientation of $[i_1\cdots i_{p+1}]$ is determined by local coordinate induced by branching structure, as shown in Eq.~(\ref{eq:branch_local_coord}).
-We use $-[i_1 \cdots i_{p+1}]$ to denote the simplex which reversed orientation from the simplex in lattice.
+Elements of $Y_p$ consist of $p+1$ vertices, and for $p$-simplex $\Delta$ with vertices $\{i_0,\cdots,i_{p}\}$, where $i_0<\cdots<i_{p}$, we label it as $[i_0\cdots i_{p}]$.
+Orientation of $[i_0\cdots i_{p}]$ is determined by local coordinate induced by branching structure, as shown in Eq.~(\ref{eq:branch_local_coord}).
+We use $-[i_0 \cdots i_{p}]$ to denote the simplex which reversed orientation from the simplex in lattice.
 More generally, a free abelian group is generated by elements of $Y_p$.
-We label this abelian group is as $C_p(Y)$, where
+We label this abelian group as $C_p(Y)$, where
 \begin{align}
-  C_p(Y)=\left\{\sum_{\Delta\in Y_p}a_{\Delta}~|\Delta\rangle~\middle|~a_\bullet\in\mathbb{Z}\right\}
+  C_p(Y)=\left\{\sum_{\Delta^p\in Y_p}a_{\Delta}~|\Delta^p\rangle~\middle|~a_\bullet\in\mathbb{Z}\right\}
   \label{}
 \end{align}
-where summation of simplex is understood as a formal sum, and we introduce Dirac's notation to label elements of the group.
-The dual space is formally generated by $\langle\Delta|, \forall \Delta\in Y_p$, and we define the inner product as
+where summation of simplex is understood as a formal sum. 
+We introduce Dirac's bracket to label elements of this group.
+The ket space $\widetilde{C}_p(Y)$ is formally generated by $\langle\Delta^p|, \forall \Delta^p\in Y_p$, and we define the inner product as
 \begin{align}
-  \langle \Delta|\Delta'\rangle=\delta_{\Delta,\Delta'}
+  \langle \Delta^p_1|\Delta^p_2\rangle=\delta_{\Delta^p_1,\Delta^p_2}
   \label{eq:simplex_inner_prod}
 \end{align}
-For $p\le d$ or $p<0$, we define $C_p(Y)$ as the group with only one element.
+For $p\ge d$ or $p<0$, we define $C_p(Y)$ or $\widetilde{C}_p(Y)$ as the group with only identity element.
 
 Let us also introduce boundary operators for later use:
 \begin{align}
   \partial^{p}:~&C_p(Y)\rightarrow C_{p-1}(Y)\notag\\
-  &[i_1 \cdots i_{p+1}]\mapsto\sum_{k}(-1)^k[i_1 \cdots \hat{i}_k,\cdots,i_{p+1}]
+  &[i_0 \cdots i_{p}]\mapsto\sum_{k}(-1)^k[i_0 \cdots \hat{i}_k,\cdots,i_{p}]
   \label{eq:simplicial_homology_bdry_operator}
 \end{align}
 The geometric meaning for $\partial^p$ is clear: for a given $p$-simplex, it takes out all boundary $p-1$-simplex, where $\pm$ sign indicates whether the orientation of the boundary $p-1$-simplex is consistent or inconsistent with the bulk.
 
-Now, let us add global symmetry group $SG$ to this lattice system. 
+For later convenience, we also define action of boundary operator $\partial$ on the ket space as
+\begin{align}
+  \partial^{p}:~&\widetilde{C}_{p-1}(Y)\rightarrow \widetilde{C}_{p}(Y)\notag\\
+  &\langle\Delta^{p-1}|\mapsto\sum_{\Delta^p}\langle\Delta^{p-1}|\partial^p|\Delta^p\rangle\langle\Delta^p|
+  \label{eq:ket_bdry_operator}
+\end{align}
+For simplicity, we use the left/right action of boundary operator on simplex to distinguish its action on bra/ket state: $\partial\Delta^p\equiv\partial^p|\Delta^p\rangle$ and $\Delta^{p-1}\partial\equiv\langle\Delta^{p-1}|\partial^p$.
+
+Now, let us define global symmetry group $SG$ and local Hilbert spaces on this lattice system. 
 In this part, we consider the case where $SG$ as discrete group, includes both onsite and lattice symmetry.
-For an arbitrary $p$-simplex $\Delta\in Y_p$, we define $SG_\Delta$ as the subgroup that maps $\Delta$ to itself while preserving orientation of $\Delta$.
-Notice that internal symmetry, labeled as $SG_0$, is always a normal subgroup of $SG_\Delta$.
+For an arbitrary $p$-simplex $\Delta^p\in Y_p$, we define $SG_{\Delta^p}$ as the subgroup that maps $\Delta^p$ to itself while preserving orientation of $\Delta^p$.
+Notice that internal symmetry, labeled as $SG_0$, is always a normal subgroup of $SG_{\Delta^p}$.
 
 The triangulation as well as the branching structure is chosen to be invariant under $SG$ action.
-Namely, for any $g\in SG$ and $\Delta\in Y_p$, there exists $\Delta'\in Y_p$, such that $\Delta'=g(\Delta)$, without additional minus sign.
-Furthermore, we require $SG_\Delta$ to be a pointwise action on $\Delta$. 
-That is to say, $SG_\Delta$ acts as an onsite symmetry group locally on $\Delta$.
-Thus, for any $d$-simplex $\Delta$, we have $SG_\Delta=SG_0$. 
-{\color{red} Show the above triangulation is always possible when $|Y|=\mathbb{R}^d$.}
-And for $\Delta\in Y_p$ and $\Delta'\in Y_{p-1}$, if $\langle\Delta'|\partial\Delta\rangle\neq0$, then $SG_\Delta\subset SG_{\Delta'}$.
+Namely, for any $g\in SG$ and $\Delta_1^p\in Y_p$, there exists $\Delta^p_2\in Y_p$, such that $\Delta^p_2=g(\Delta^p_1)$, without additional minus sign.
+Furthermore, we require $SG_{\Delta^p}$ to be a pointwise action on ${\Delta^p}$. 
+That is to say, $SG_{\Delta^p}$ acts as an onsite symmetry group locally on $\Delta^p$.
+So, for $\Delta^p\in Y_p$ and $\Delta^{p-1}\in Y_{p-1}$, if $\langle\Delta^{p-1}|\partial\Delta^p\rangle\neq0$, then $SG_{\Delta^p}\subset SG_{\Delta^{p-1}}$.
+And for any $d$-simplex $\Delta^d$, we have $SG_{\Delta^d}=SG_0$. 
+{\color{red} Is the above statement about $d$-simplex right? Show the above triangulation is always possible when $|Y|=\mathbb{R}^d$.}
 
-The next step is to define local Hilbert spaces of this system.
-Local Hilbert spaces live on 0-simplices, which is spanned by basis vector labeled by group elements as $|g_i\rangle$ with $g_i\in SG$.
+The next step is to define local Hilbert spaces on this triangulated lattice.
+Local Hilbert spaces live on 0-simplices, with dimension equal to number of elements in $SG$.
+For local Hilbert space living on simplex $[i]$, the basis vector is labeled by group elements as $|g\rangle_{[i]}$ with $g\in SG$.
 {\color{red} When $SG$ include translational symmetry, the Hilbert space is infinite dimension. Is this a problem?
 Can we use $SG_\Delta$ as the local Hilbert space on 0-simplex $\Delta$? This choice avoids infinite dimensional Hilbert space, and seems more physical.}
-Symmetry action on local Hilbert space is defined as
+And symmetry action on local Hilbert space is defined as
 \begin{align}
-  g|g_i\rangle_[i]=|g g_i\rangle_{g([i])}~,\quad g,g_i\in SG~,\ [i]\in Y_0
+  g|g_i\rangle_{[i]}=|g g_i\rangle_{g([i])}%~,\quad g,g_i\in SG~,\ [i]\in Y_0
   \label{}
 \end{align}
 
 
-\subsection{General wavefunctions and equivariant cochains}
-Now, we are able to construct quantum states on this lattice system.
+\subsection{Fixed point wavefunctions}
+Now, let us construct quantum states on this lattice system.
 %We are interested in wavefunctions which serves as the ground state of some gapped local Hamiltonian.
 %Entanglement entropy of these wavefunctions should satisfy area law, which roughly means that a local degree of freedom only has short-range entanglement with its nearby degree of freedoms.
 %Since we focus on fixed point wavefunctions, we expect that wavefunctions are determined by quantum states of sites within one simplex.
 %Besides, since we are considering symmetric phase, the fixed point wavefunction can be thought as equal weight superposition of all domain wall configuration.
 %We thus expect all configuration contributes equally in the wavefunction weight, and all the nontrivial information is contained in the phase factor of each configuration.
 Let us focus on a special class of wavefunctions, which can be expressed as equal weight superposition of all configurations of quantum states.
-The quantum phase information is contained in phases factor for each configuration.
-We further assume that wavefunction only depends on local quantum states of every simplex, namely, the phase factor for each configuration can be factorized to phase factor from each simplex.
-Under the above assumption, the most generic wavefunction can be expressed as
-\begin{widetext}
-\begin{align}
-  |\Psi[\phi]\rangle=\sum_{\{g_i\}}\prod_{p=0}^d \prod_{\substack{[i_1 \cdots\\ i_{p+1}]\in Y_p}} \exp\left[ \ii \phi_{[i_1\cdots i_{p+1}]}(1,g_{i_1},\cdots,g_{i_{p+1}}) \right] |g_1,g_2,\cdots,g_N\rangle
-  \label{eq:equivariant_cochain_wf}
-\end{align}
-\end{widetext}
-where $|g_1,\cdots,g_N\rangle$ is a shorthand for $|g_1\rangle_{[1]}\otimes\cdots\otimes|g_N\rangle_{[N]}$.
-This wavefunction is can be thought as a functional of $\phi$, where $\phi$ is a function which maps a $p$-simplex $[i_1\cdots i_{p+1}]$ and a $(p+2)$-tuple of group elements $(g_0,g_{i_1},\cdots,g_{i_{p+1}})$ to a phase factor $\phi_{[i_1\cdots i_{p+1}]}(g_0,g_{i_1},\cdots,g_{i_{p+1}})$ for $0\le p\le d$.
-In Eq.~(\ref{eq:equivariant_cochain_wf}), the first element of $\phi_{[i_1\cdots i_{p+1}]}$ is fixed to be identity, which seems to be redundant.
-Yet this argument will be useful when we impose symmetry constraint on $\phi_{[i_1\cdots i_{p+1}]}$.
-
-Now, let us consider how symmetry acts on $|\Psi[\phi]\rangle$.
-Under symmetry action $g\in SG$, we obtain
+The quantum phase information is contained only in phase factors.
+We further assume that for a given state, the phase factor is determined by local quantum state of every simplex. 
+Namely, the phase factor for each configuration can be factorized to phase factors from each simplex.
+Under the above assumption, the most generic wavefunction reads
 \begin{widetext}
   \begin{align}
-    g|\Psi[\phi]\rangle&=\sum_{\{g_i\}}\prod_{p=0}^d \prod_{[i_1\cdots i_{p+1}]} \exp\left[ \ii \phi_{[i_1\cdots i_{p+1}]}(1,g_{i_1},\cdots,g_{i_{p+1}}) \right] |gg_1\rangle_{g([1])}\otimes\cdots\otimes|gg_N\rangle_{g([N])}\notag\\
-    &=\sum_{\{g_i\}}\prod_{p=0}^d \prod_{[i_1\ldots i_{p+1}]} \exp\left[ \rho_{\TT}(g)\ii \phi_{g^{-1}([i_1\ldots i_{p+1}])}(1,g^{-1}g_{i_1},\cdots,g^{-1}g_{i_{p+1}}) \right] |g_1,\cdots,g_N\rangle\notag\\
-    &=\sum_{\{g_i\}}\prod_{p=0}^d \prod_{[i_1\cdots i_{p+1}]} \exp\left[ \ii \phi_{[i_1\cdots i_{p+1}]}(g,g_{i_1},\cdots,g_{i_{p+1}}) \right] |g_1,\cdots,g_N\rangle
+    |\Psi[\phi]\rangle=\sum_{\{g_i\}}\prod_{p=0}^d \prod_{\substack{[i_0 \cdots\\ i_{p}]\in Y_p}} \exp\left[ \ii \phi_{[i_0\cdots i_{p}]}(1,g_{i_0},\cdots,g_{i_{p}}) \right] |g_1,g_2,\cdots,g_N\rangle
+    \label{eq:equivariant_cochain_wf}
+  \end{align}
+\end{widetext}
+where $|g_1,\cdots,g_N\rangle$ is a shorthand for $|g_1\rangle_{[1]}\otimes\cdots\otimes|g_N\rangle_{[N]}$.
+This wavefunction is can be thought as a functional of $\phi$, where $\phi$ maps a $p$-simplex $[i_0\cdots i_{p}]$ and a $(p+2)$-tuple of group elements $(g_0,g_{i_0},\cdots,g_{i_{p}})$ to a phase factor $\phi_{[i_0\cdots i_{p}]}(g_0,g_{i_0},\cdots,g_{i_{p}})$ for any $0\le p\le d$.
+In Eq.~(\ref{eq:equivariant_cochain_wf}), the first argument of $\phi_{[i_0\cdots i_{p}]}$ is fixed to be identity, which seems to be redundant.
+Yet this argument will be useful when we impose symmetry constraint on $\phi_{[i_0\cdots i_{p}]}$.
+{\color{red} Argue this kind of wavefunctions are fixed point wavefunctions?}
+
+Now, let us consider how symmetry acts on $|\Psi[\phi]\rangle$.
+Under $g\in SG$ action, we obtain
+\begin{widetext}
+  \begin{align}
+    g|\Psi[\phi]\rangle&=\sum_{\{g_i\}}\prod_{p=0}^d \prod_{[i_0\cdots i_{p}]} \exp\left[ \ii \phi_{[i_0\cdots i_{p}]}(1,g_{i_0},\cdots,g_{i_{p}}) \right] |gg_1\rangle_{g([1])}\otimes\cdots\otimes|gg_N\rangle_{g([N])}\notag\\
+    &=\sum_{\{g_i\}}\prod_{p=0}^d \prod_{[i_0\ldots i_{p}]} \exp\left[ \rho_{\TT}(g)\ii \phi_{g^{-1}([i_0\ldots i_{p}])}(1,g^{-1}g_{i_0},\cdots,g^{-1}g_{i_{p}}) \right] |g_1,\cdots,g_N\rangle\notag\\
+    &=\sum_{\{g_i\}}\prod_{p=0}^d \prod_{[i_0\cdots i_{p}]} \exp\left[ \ii \phi_{[i_0\cdots i_{p}]}(g,g_{i_0},\cdots,g_{i_{p}}) \right] |g_1,\cdots,g_N\rangle
     \label{eq:sym_action_equivariant_cochain_wf}
   \end{align}
 \end{widetext}
 To obtain the last line of the above equation, we define
 \begin{align}
-  &\phi_{[i_1\cdots i_{p+1}]}(g,g_{i_1},\cdots,g_{i_{p+1}})\triangleq\notag\\
-  &\rho_{\TT}(g) \phi_{g^{-1}([i_1\cdots i_{p+1}])}(1,g^{-1}g_{i_1},\cdots,g^{-1}g_{i_{p+1}})
+  &\phi_{[i_0\cdots i_{p}]}(g,g_{i_0},\cdots,g_{i_{p}})\triangleq\notag\\
+  &\rho_{\TT}(g) \phi_{g^{-1}([i_0\cdots i_{p}])}(1,g^{-1}g_{i_0},\cdots,g^{-1}g_{i_{p}})
   \label{}
 \end{align}
-%Notice that we use $\rho_{P\TT}$ instead of $\rho_\TT$ in the above definition.
-%{\color{red} More reasons to use $\rho_{P\TT}$ instead of $\rho_\TT$?}
 This definition is equivalent to the homogeneous condition for $\phi$ as
 \begin{align}
-  &\rho_{\TT}(g)\phi_{[i_1\cdots i_{p+1}]}(g_0,g_1,\cdots,g_{p+1})=\notag\\
-  &\phi_{g([i_1\cdots i_{p+1}])}(gg_0,gg_1,\cdots,gg_{p+1})
+  &\rho_{\TT}(g)\phi_{[i_0\cdots i_{p}]}(g_0,g_1,\cdots,g_{p+1})=\notag\\
+  &\phi_{g([i_0\cdots i_{p}])}(gg_0,gg_1,\cdots,gg_{p+1})
   \label{eq:equivariant_cochain_condition}
 \end{align}
+We call such $\phi$ equivariant cochain, and we will discuss it in detail in Appendix~\ref{subapp:equivariant_cohomology_math_formulation}.
 
 \subsection{Condition for symmetric wavefunction}
 {\color{red} The goal of this part is to prove that the equivariant cocycle condition is the necessary and sufficient condition to have a symmetric wavefunction. While the sufficient part is not hard, I am not sure the necessary part is true.}
 
 We require wavefunction defined in Eq.~(\ref{eq:sym_action_equivariant_cochain_wf}) to be invariant under $g\in SG$ action~(up to a $U(1)$ phase factor): $g|\Psi[\phi]\rangle=\exp[\ii \alpha(g)]|\Psi[\phi]\rangle$. 
-where $\exp[\ii\alpha(g)]$ is the quantum number for $g$ action.
-This symmetric condition puts constraint on possible choices of $\phi$:
+where $\exp[\ii\alpha(g)]$ is the quantum number for $g$ action, namely, $\alpha$ form a $1D$ representation for $SG$.
+
+It is straightforward to see that the symmetric condition puts the following constraint on $\phi$:
 \begin{align}
-    &\sum_{p=0}^d\sum_{[i_1\cdots i_{p+1}]\in Y_p}\phi_{[i_1\cdots i_{p+1}]}(g-1,g_{i_1},\dots,g_{i_{p+1}})=\alpha(g)~,\notag\\ 
-    \label{eq:equivariant_cochain_sym_condition}
+  &\sum_{p=0}^d\sum_{[i_0\cdots i_{p}]\in Y_p}\phi_{[i_0\cdots i_{p}]}(g-1,g_{i_0},\dots,g_{i_{p+1}})=\alpha(g)~,\notag\\ 
+  \label{eq:equivariant_cochain_sym_condition}
 \end{align}
 for arbitrary configuration $\{g_1,\ldots,g_N\}$.
 Here we define
 \begin{align}
-    \phi(\ldots,g\pm h,\ldots)\equiv \phi(\ldots,g,\ldots)\pm \phi(\ldots,h,\ldots)
+  \phi(\ldots,g\pm h,\ldots)\equiv \phi(\ldots,g,\ldots)\pm \phi(\ldots,h,\ldots)
 \end{align}
-And $\pm$ is understood as formal summation/substraction.
+And $\pm$ is understood as formal summation/subtraction, and should not be confused with group multiplication $gh$.
 
-One naive solution is to simply enforce $&\phi_{[i_1\cdots i_{p+1}]}$ independent of the first argument.
-This solution only gives a trivial symmetric phase, but fails to capture more exotic bosonic SPT phases.
-{\color{red} Prove this solution is coboundary?}
+%One naive solution is to simply enforce $\phi_{[i_0\cdots i_{p}]}$ to be independent of the first argument.
+%This solution only gives a trivial symmetric phase, but fails to capture more exotic bosonic SPT phases.
+%{\color{red} Prove this solution is coboundary?}
 
-To obtain the general solution for Eq.~(\ref{eq:equivariant_cochain_sym_condition}), we define two useful operators acting on $\phi$.
-The first operator $\dd$, is similar as the coboundary operator for group cochain defined in Eq.~(\ref{eq:group_coboundary_operator})
+To simplified Eq.~(\ref{eq:equivariant_cochain_sym_condition}) and obtain solutions, we define two useful operators acting on $\phi$.
+The first operator $\dd_\wedge$ is defined similarly as the coboundary operator for group cochain in Eq.~(\ref{eq:group_coboundary_operator}):
 \begin{align}
-&(\dd\phi_{[i_1\ldots i_{p+1}]})(g_0,\cdots,g_{p+2})\notag\\
-=&\sum_{k=0}^{p+2}(-1)^k\phi_{[i_1\ldots i_{p+1}]}(g_0,\cdots,\hat{g}_k,\cdots,g_{p+2})
+  &(\dd_\wedge\phi_{[i_0\ldots i_{p}]})(g_0,\cdots,g_{p+2})\notag\\
+  =&\sum_{k=0}^{p+2}(-1)^k\phi_{[i_0\ldots i_{p}]}(g_0,\cdots,\hat{g}_k,\cdots,g_{p+2})
 \end{align}
 
-The second operator, labeled as $\partial$, is induced by boundary operator defined in Eq.~(\ref{eq:simplicial_homology_bdry_operator}). 
-Consider $p$-simplex $\Delta_0$, we define $(\partial\phi)_{\Delta_0}$ as
+The second operator, labeled as $\dd_>$, is induced by boundary operator defined in Eq.~(\ref{eq:ket_bdry_operator}).~(We should treat the subscript $\Delta^p$ as ket state $\langle\Delta^p|$.)
+Consider $p$-simplex $\Delta^p$, we define $(\dd_>\phi)_{\Delta^p}$ as
 \begin{align}
-    (\partial\phi)_{\Delta_0}\equiv \sum_{\Delta\in Y_{p+1}}\langle\Delta_0|\partial\Delta\rangle\phi_\Delta~
+  (\dd_>\phi)_{\Delta^p}\equiv \phi_{\Delta^p\partial}
 \end{align}
-where the inner product of simplices $\langle \bullet|\bullet\rangle$ is defined in Eq.~(\ref{eq:simplex_inner_prod}).
-The physical meaning of $\partial$ is clear:
+where $\Delta^p\partial=\langle\Delta^p|\partial^{p+1}\in \widetilde{C}_{p+1}(Y)$, and we define
+\begin{align}
+  \phi_{\sum_i a_i\Delta^p_i}=\sum_i a_i\,\phi_{\Delta^p_i}~,\quad a_i\in\ZZ
+  \label{}
+\end{align}
+%where the inner product of simplices $\langle \bullet|\bullet\rangle$ is defined in Eq.~(\ref{eq:simplex_inner_prod}).
+The physical meaning of $\dd_>$ is clear:
 it generates wavefunction at $p$-dimensional interface of several $p+1$-simplices.
 By inserting definition of boundary operator in Eq.~(\ref{eq:simplicial_homology_bdry_operator}), we have
+{\color{red} check the following expression}
 \begin{align}
-    &(\partial\phi)_{[i_1\dots i_{p+1}]}(g_0,\cdots,g_{p+2})\equiv\notag\\
-    &\sum_{k=1}^{p+2}\sum_{\substack{[\dots i_{k-1},j,\\i_{k}\dots]\in Y_{p+1}}}(-1)^k\phi_{[\dots i_{k-1},j,i_{k}\dots]}(g_0,\cdots,g_{p+2})
+  &(\dd_>\phi)_{[i_0\dots i_{p}]}(g_0,\cdots,g_{p+2})\equiv\notag\\
+  &\sum_{k=0}^{p+1}\sum_{\substack{[\dots i_{k-1},j,\\i_{k}\dots]\in Y_{p+1}}}(-1)^k\phi_{[\dots i_{k-1},j,i_{k}\dots]}(g_0,\cdots,g_{p+2})
 \end{align}
 Notice that for any $d$-simplex $\Delta^d$, we have $(\partial\phi)_{\Delta^d}=0$.
 {\color{red} Geometrical interpretation of these two operators?}
 
 Now, let us simplify Eq.~(\ref{eq:equivariant_cochain_sym_condition}) as
 \begin{widetext}
-\begin{align}
-    &\sum_{p}\sum_{[i_1\cdots i_{p+1}]}\phi_{[i_1\cdots i_{p+1}]}(g-1,g_{i_1},\dots,g_{i_{p+1}})\notag\\
-    =&\sum_p\sum_{[i_1\dots]}\left\{ \dd \phi_{[i_1\cdots i_{p+1}]}(1,g,g_{i_1},\cdots,g_{i_{p+1}})+\sum_{k=1}^{p+1}(-1)^k\phi(1,g,g_{i_1},\cdots,\hat{g}_{i_k},\cdots,g_{i_{p+1}}) \right\}\notag\\
-    =&\sum_{p=0}^{d-1}\sum_{[i_1\dots]}\left\{ \left(\dd\phi_{[i_1\cdots i_{p+1}]} +(\partial\phi)_{[i_1\dots i_{p+1}]}\right)(1,g,g_{i_1},\cdots,g_{i_{p+1}})\right\}
+  \begin{align}
+    &\sum_{p}\sum_{[i_0\cdots i_{p}]}\phi_{[i_0\cdots i_{p}]}(g-1,g_{i_0},\dots,g_{i_{p+1}})\notag\\
+    =&\sum_p\sum_{[i_0\dots]}\left\{ \dd \phi_{[i_0\cdots i_{p}]}(1,g,g_{i_0},\cdots,g_{i_{p+1}})+\sum_{k=1}^{p+1}(-1)^k\phi(1,g,g_{i_0},\cdots,\hat{g}_{i_k},\cdots,g_{i_{p+1}}) \right\}\notag\\
+    =&\sum_{p=0}^{d-1}\sum_{[i_0\dots]}\left\{ \left(\dd\phi_{[i_0\cdots i_{p}]} +(\partial\phi)_{[i_0\dots i_{p}]}\right)(1,g,g_{i_0},\cdots,g_{i_{p+1}})\right\}
     -\sum_{i}\phi_{[i]}(1,g)\notag\\
     =&\alpha(g)\!\!\mod 2\pi
-\end{align}
-for any $|g_1,g_2,\cdots,g_N\rangle$ state.
-Thus, symmetric wavefunction requires 
-\begin{align}
-\left(\dd\phi_{\Delta^p} +(\partial\phi)_{\Delta^p}\right)(1,g,g_1,\cdots,g_{p+1})=f_{\Delta^p}(g)~,\quad \forall \Delta^p\in Y_p~,\forall g_i\in SG~.
-\end{align}
-for some function $f$.
-Here, we focus on a special case where
-\begin{align}
+  \end{align}
+  for any $|g_1,g_2,\cdots,g_N\rangle$ state.
+  Thus, symmetric wavefunction requires 
+  \begin{align}
+    \left(\dd\phi_{\Delta^p} +(\partial\phi)_{\Delta^p}\right)(1,g,g_1,\cdots,g_{p+1})=f_{\Delta^p}(g)~,\quad \forall \Delta^p\in Y_p~,\forall g_i\in SG~.
+  \end{align}
+  for some function $f$.
+  Here, we focus on a special case where
+  \begin{align}
     \dd\phi_{\Delta^p}+(\partial\phi)_{\Delta^p}=0~,\quad\forall \Delta^p\in Y_p~,~0\le p\le d~.
-\label{eq:equivariant_cocycle_condition}
-\end{align}
-{\color{red} Can we prove this is the only possibility?}
-Mathematically, it is equivalent to say that $\phi$ belongs an equivariant cohomology $Z^d_{SG}[X;U(1)_{PT}]$, where $X$ is the dual lattice of $Y$.
-We will discuss this in full detail in Appendix~\ref{subapp:equivariant_cohomology_math_formulation}.
-In this case, quantum number for $g$ action is simply given by $\exp[\ii\alpha(g)]=\exp\left[\ii\sum_{i=1}^N \phi_{[i]}(1,g)\right]$.
-{\color{red} Do they always form representation? Relate $\phi_{[i]}$ to filling fraction? Does this phenomena relate to filling constraint?}
+    \label{eq:equivariant_cocycle_condition}
+  \end{align}
+  {\color{red} Can we prove this is the only possibility?}
+  Mathematically, it is equivalent to say that $\phi$ belongs an equivariant cohomology $Z^d_{SG}[X;U(1)_{PT}]$, where $X$ is the dual lattice of $Y$.
+  We will discuss this in full detail in Appendix~\ref{subapp:equivariant_cohomology_math_formulation}.
+  In this case, quantum number for $g$ action is simply given by $\exp[\ii\alpha(g)]=\exp\left[\ii\sum_{i=1}^N \phi_{[i]}(1,g)\right]$.
+  {\color{red} Do they always form representation? Relate $\phi_{[i]}$ to filling fraction? Does this phenomena relate to filling constraint?}
 \end{widetext}
 
 There is a clear physical interpretation for Eq.~(\ref{eq:equivariant_cocycle_condition}), which is related to real space construction of SPT phases.
 To see this, let us first consider Eq.~(\ref{eq:equivariant_cocycle_condition}) for a $d$-simplex $\Delta^d$.
 In this case, we have $(\partial\phi)_{\Delta^d}=0$, and the cocycle condition becomes
 \begin{align}
-    \dd\phi_{\Delta^d}=0
+  \dd\phi_{\Delta^d}=0
 \end{align}
 The above equation is very similar to the group cocycle condition. 
 However, notice that the homogeneous condition defined in Eq.~(\ref{eq:equivariant_cochain_condition}) is different from the usual homogeneous condition Eq.~(\ref{eq:homo_cochain_def}) for group cochain.
@@ -1094,7 +1112,7 @@ Yet they have the same group structure, and in this sense we put the same SPT ph
 
 For $p<d$, physical meaning of Eq~(\ref{eq:equivariant_cocycle_condition}) can be interpreted as following.
 $(\partial\phi)_{\Delta^p}$ generates boundary wavefunctions at $\Delta^p$ for all $p+1$-simplices intersecting at $\Delta^p$.
-Similar as the discussion in Appendix~\ref{subapp:spt_bdry_wf}, the cocycle condition means that $(\partial\phi)_{\Delta^p}$ is a coboundary, which can be symmetrically gapped out by $\dd\phi_{\Deltal^p}$.
+Similar as the discussion in Appendix~\ref{subapp:spt_bdry_wf}, the cocycle condition means that $(\partial\phi)_{\Delta^p}$ is a coboundary, which can be symmetrically gapped out by $\dd\phi_{\Delta^p}$.
 
 To see the physical interpretation of $\phi_{\Delta^p}$ for $p<d$, let us consider quantum states where $\phi_{\Delta^p}\neq 0$ and $\phi_{\Delta^{p'}}=0$ for all $\Delta^{p'}\in Y_{p'}$ with $p'>p$. 
 In this case, $\phi_{\Delta^p}$ is a $SG$-valued $SG_{\Delta^p}$ $p+1$-cocycle, which is classified by cohomology group $H^{p+1}[SG_{\Delta^p},U(1)_{\TT}]$.
@@ -1224,9 +1242,9 @@ Let us study these two cases separately in the following.
       \partial^q:~& C(X_q)\rightarrow C(X_{q-1})
       \label{}
     \end{align}
-  where the definition is given similar as Eq.~(\ref{eq:simplicial_homology_bdry_operator}). 
-  We often omit superscript when it can be determined from the context.
-  Apparently, we have $\partial^{q-1}\circ\partial^q=0$
+    where the definition is given similar as Eq.~(\ref{eq:simplicial_homology_bdry_operator}). 
+    We often omit superscript when it can be determined from the context.
+    Apparently, we have $\partial^{q-1}\circ\partial^q=0$
 
     Let us consider function acting on $X_q$ induced by $C^{p,q}$ as
     \begin{align}
@@ -1234,7 +1252,7 @@ Let us study these two cases separately in the following.
       &\bar{\Delta}^q\mapsto\phi^{p,q}_{\bar{\Delta}^q}
       \label{}
     \end{align}
-    
+
     We then define coboundary operator on this function $d_>:C^{p,q}\rightarrow C^{p,q+1}$ as following:
     \begin{align}
       \dd_>\left(\phi^{p,q}\right)_{\bar{\Delta}^{q+1}}=\sum_{\bDelta^{q}\in X_{q}}\langle\bDelta^q|\partial\bDelta^{q+1}\rangle \phi^{p,q}_{\bDelta^{q}}
@@ -1354,8 +1372,8 @@ Let us consider systems with symmetry $SG=U_s(1)\times Z_2^\TT$, where $U_s(1)$ 
 
 Cohomology group calculation gives SPT classification as\cite{ChenGuLiuWen2013}
 \begin{align}
-H^4(U_s(1)\times Z_2^\TT,U_\TT(1))=Z_2^3
-\label{eq:bosonic_U1xT_cohomology_classification}
+  H^4(U_s(1)\times Z_2^\TT,U_\TT(1))=Z_2^3
+  \label{eq:bosonic_U1xT_cohomology_classification}
 \end{align}
 Here subscript $\TT$ denotes the nontrivial action of $\TT$ on $U(1)$ coefficient.
 Two of these three $Z_2$ root phases are caused by interplay between $U_s(1)$ and $Z_2^\TT$, while the third one is due to time reversal only.
@@ -1377,8 +1395,8 @@ Since $b_g$ and $M_g$ are non-local excitation, they generally carry projective 
 For our purpose, we consider the case where $b_g$ carries nontrivial projective representation under $U_s(1)\times Z_2^\TT$, while $M_g$ carries linear representation.
 Projective representation of $b_g$ is classified by the second cohomology group
 \begin{align}
-H^2[U_s(1)\times Z_2^\TT,U_\TT(1)]=Z_2^2
-\label{eq:U1T_H2}
+  H^2[U_s(1)\times Z_2^\TT,U_\TT(1)]=Z_2^2
+  \label{eq:U1T_H2}
 \end{align}
 The physical meaning of these two $Z_2$'s are quite clear.
 Roughly speaking, the first $Z_2$ denotes whether $b_g$ is a Kramers singlet or Kramers doublet, while the second $Z_2$ indicates whether $e_g$ carries integer or half-integer $U_s(1)$ charge.
@@ -1404,9 +1422,9 @@ In this case, we start from spin liquid phase with $b_g$ transform as Kramers do
 Then, $b_g$ has two-fold internal degeneracy, labeled as $b_g\equiv(b_{g\uparrow},b_{g\downarrow})^\mathrm{t}$. 
 The simplest symmetry assignment on $b_g$ reads
 \begin{align}
-U_g(\phi)&: b_g\rightarrow \ee^{\ii\phi}\cdot b_g~,\notag\\
-U_s(\theta)&: b_g\rightarrow b_g~,\notag\\
-\TT&: b_g\rightarrow \ii\sigma^y\cdot b_g,\quad \ii\rightarrow-\ii~.
+  U_g(\phi)&: b_g\rightarrow \ee^{\ii\phi}\cdot b_g~,\notag\\
+  U_s(\theta)&: b_g\rightarrow b_g~,\notag\\
+  \TT&: b_g\rightarrow \ii\sigma^y\cdot b_g,\quad \ii\rightarrow-\ii~.
 \end{align}
 Namely, $b_g$ carry no $U_s(1)$ charge and $\TT^2\circ b_g=-b_g$.
 
@@ -1423,23 +1441,23 @@ Then, $U_s(1)$ monopoles transforms as Kramers doublets under $\TT$, which is a 
 Similar as the previous case, we consider two-component gauge charge, with $b_g\equiv(b_{g\uparrow},b_{g\downarrow})^\mathrm{t}$.
 Then a natural symmetry assignment on $b_g$ reads
 \begin{align}
-U_g(\phi)&: b_{g\sigma}\rightarrow \ee^{\ii\phi}\cdot b_{g\sigma}~,\notag\\
-U_s(\theta)&: b_{g\uparrow}\rightarrow \ee^{\ii\theta/2}\cdot b_{g\uparrow}~,\quad 
-b_{g\downarrow}\rightarrow \ee^{-\ii\theta/2}\cdot b_{g\downarrow}~,\notag\\
-\TT&: b_{g\uparrow}\leftrightarrow b_{g\downarrow},\quad \ii\rightarrow-\ii~.
-\label{eq:half_charge_U1_QSL_sym_action}
+  U_g(\phi)&: b_{g\sigma}\rightarrow \ee^{\ii\phi}\cdot b_{g\sigma}~,\notag\\
+  U_s(\theta)&: b_{g\uparrow}\rightarrow \ee^{\ii\theta/2}\cdot b_{g\uparrow}~,\quad 
+  b_{g\downarrow}\rightarrow \ee^{-\ii\theta/2}\cdot b_{g\downarrow}~,\notag\\
+  \TT&: b_{g\uparrow}\leftrightarrow b_{g\downarrow},\quad \ii\rightarrow-\ii~.
+  \label{eq:half_charge_U1_QSL_sym_action}
 \end{align}
 We point out that starting from a spin model, $b_g$ can be viewed as parton decomposition for the physical spins $\vec{S}$ in this case:
 \begin{align}
-\vec{S}\sim \frac{1}{2}b_g^\dg\cdot \vec{\sigma}\cdot b_g
+  \vec{S}\sim \frac{1}{2}b_g^\dg\cdot \vec{\sigma}\cdot b_g
 \end{align}
 where $b_g$'s are glued by gauge field $a_g$ to recover the physical Hilbert space.
 
 On spin operator, $U_s(1)$ is identified as spin rotation symmetry along $z$-axis while $\TT$ can be defined as (anti-unitary) spin flip:
 \begin{align}
-U_s(\theta)&: S^+\rightarrow \ee^{-\ii\theta} S^+,\quad S^z\rightarrow S^z~,\notag\\
-\TT&: S^{\pm}\rightarrow S^{\mp},\quad S^z\rightarrow-S^z,\quad \ii\rightarrow-\ii~.
-\label{eq:spin_sym_action}
+  U_s(\theta)&: S^+\rightarrow \ee^{-\ii\theta} S^+,\quad S^z\rightarrow S^z~,\notag\\
+  \TT&: S^{\pm}\rightarrow S^{\mp},\quad S^z\rightarrow-S^z,\quad \ii\rightarrow-\ii~.
+  \label{eq:spin_sym_action}
 \end{align}
 We claim that the Higgs phase obtained by condensing the bound state of $M_g$ and $S^+$ would be a nontrivial SPT phase, which is characterized by "statistical Witten effect": $U_s(1)$ monopoles are fermions\cite{MetlitskiKaneMatthew2013}.
 
@@ -1452,36 +1470,36 @@ In this case, an arbitrary gapped quasi-particles, named as dyons, can be labele
 
 Under $\TT$ action, gauge charge/monopole number changes as
 \begin{align}
-\TT: (q_g,m_g;q_s,m_s)\rightarrow (q_g,-m_g;-q_s,m_s)
+  \TT: (q_g,m_g;q_s,m_s)\rightarrow (q_g,-m_g;-q_s,m_s)
 \end{align}
 
 The next step is to figure out quantization conditions for these dyons\cite{Dirac1931,Schwinger1969}.
 Given two arbitrary dyons labeled by $\vec{n}_1$ and $\vec{n}_2$, where $\vec{n}_i=(q_g^i,m_g^i;q_s^i,m_s^i)$, we put $\vec{n}_1$ dyon in the origin and move $\vec{n}_2$ dyon along a closed path encircling an solid angle $\Omega$ respective to the origin.
 Then, the Berry phase accumulated in this process is given by
 \begin{align}
-\exp\left[\frac{\ii\Omega}{2}\left(q_g^2m_g^1-q_g^1m_g^2+q_s^2m_s^1-q_s^1m_s^2\right)\right]
-\label{eq:dyon_berry_phase}
+  \exp\left[\frac{\ii\Omega}{2}\left(q_g^2m_g^1-q_g^1m_g^2+q_s^2m_s^1-q_s^1m_s^2\right)\right]
+  \label{eq:dyon_berry_phase}
 \end{align}
 The quantization condition comes from the fact that the above Berry phase should be the same for either $\Omega$ or $4\pi-\Omega$. 
 Thus, we have
 \begin{align}
-q_g^2m_g^1-q_g^1m_g^2+q_s^2m_s^1-q_s^1m_s^2\in \mathbb{Z}
-\label{eq:dyon_quantization}
+  q_g^2m_g^1-q_g^1m_g^2+q_s^2m_s^1-q_s^1m_s^2\in \mathbb{Z}
+  \label{eq:dyon_quantization}
 \end{align}
 
 In the case considered here, according to Eq.~(\ref{eq:half_charge_U1_QSL_sym_action}) and Eq.~(\ref{eq:spin_sym_action}), dyonic charge for various operators is determined as
 \begin{align}
-b_{g\uparrow} &\sim (1,0;\frac{1}{2},0)~,\quad 
-b_{g\downarrow} \sim (1,0;-\frac{1}{2},0)~,\notag\\
-M_g &\sim (0,1;0,0)~,\quad
-S^+ \sim (0,0;-1,0)~.
-\label{eq:dyonic_charge_I}
+  b_{g\uparrow} &\sim (1,0;\frac{1}{2},0)~,\quad 
+  b_{g\downarrow} \sim (1,0;-\frac{1}{2},0)~,\notag\\
+  M_g &\sim (0,1;0,0)~,\quad
+  S^+ \sim (0,0;-1,0)~.
+  \label{eq:dyonic_charge_I}
 \end{align}
 In particular, since $b_{g\sigma}$ carries half $U_s(1)$ charge, the ``bare'' $U_s(1)$ monopole with dyonic charge $(0,0;0,1)$ would be disallowed by quantization condition Eq.~(\ref{eq:dyon_quantization}).
 Instead, monopole operator 
 \begin{align}
-M_{s+}\sim(0,\frac{1}{2};0,1)~,\quad
-M_{s-}\sim(0,-\frac{1}{2};0,1)
+  M_{s+}\sim(0,\frac{1}{2};0,1)~,\quad
+  M_{s-}\sim(0,-\frac{1}{2};0,1)
 \end{align}
 are deconfined excitations.
 Besides, we emphasis that the quasiparticles mentioned above are all \emph{bosonic}.
@@ -1489,14 +1507,14 @@ Besides, we emphasis that the quasiparticles mentioned above are all \emph{boson
 In fact, it is convenient to use $b_{g\uparrow/\downarrow}$ and $M_{s\pm}$ as generators of the four dimensional ``charge-monopole lattice'' for this $U_s(1)\times U_g(1)$ gauge theory.
 In particular, we have 
 \begin{align}
-M_g\sim M_{s+}M_{s-}^\dg~,\quad
-S^+\sim b_{g\uparrow}^\dg b_{g\downarrow}~.
+  M_g\sim M_{s+}M_{s-}^\dg~,\quad
+  S^+\sim b_{g\uparrow}^\dg b_{g\downarrow}~.
 \end{align}
 
 Furthermore, these four generators can be grouped into two sets
 \begin{align}
-\left\{b_{g\uparrow},~M_{s+}\right\}~,\quad
-\left\{b_{g\downarrow},~M_{s-}\right\}~.
+  \left\{b_{g\uparrow},~M_{s+}\right\}~,\quad
+  \left\{b_{g\downarrow},~M_{s-}\right\}~.
 \end{align}
 According to Eq.~(\ref{eq:dyon_berry_phase}), dyons generated by different sets would be invisible to each other.
 Two generators within one set ``statistically interact'' as charge and monopole, and their bound state would be a fermion\cite{Goldhaber1976}.
@@ -1508,12 +1526,12 @@ And its SPT index is characterized by properties of monopoles of external gauge 
 After condensation, the ``deconfined'' external monopole should accumulate trivial Berry phase when encircling around $M_gS^+$.
 According Eq.~(\ref{eq:dyon_berry_phase}), the simplest deconfined excitations carrying unit external monopole number are
 \begin{align}
-&M_{s+}b_{g\uparrow}^\dg\sim(-1,\frac{1}{2};-\frac{1}{2},1)~,\notag\\
-&M_{s-}b_{g\downarrow}^\dg\sim(-1,-\frac{1}{2};\frac{1}{2},1)~;\notag\\
-&M_{s+}b_{g\downarrow}^\dg\sim(-1,\frac{1}{2};\frac{1}{2},1)~,\notag\\
-&M_{s-}b_{g\downarrow}^\dg\sim(-1,-\frac{1}{2};-\frac{1}{2},1)~.
-\label{eq:four_external_monopole}
-&\end{align}
+  &M_{s+}b_{g\uparrow}^\dg\sim(-1,\frac{1}{2};-\frac{1}{2},1)~,\notag\\
+  &M_{s-}b_{g\downarrow}^\dg\sim(-1,-\frac{1}{2};\frac{1}{2},1)~;\notag\\
+  &M_{s+}b_{g\downarrow}^\dg\sim(-1,\frac{1}{2};\frac{1}{2},1)~,\notag\\
+  &M_{s-}b_{g\downarrow}^\dg\sim(-1,-\frac{1}{2};-\frac{1}{2},1)~.
+  \label{eq:four_external_monopole}
+  &\end{align}
 Notice that the first two operators are only differ by the condensed object $(0,1;-1,0)$, and thus can be identified as the same excitation in the Higgs phase, labeled as $M_f$.
 Furthermore, $M_f$ has fermionic statistics, as $M_{s+}~(M_{s-})$ and $b_{g\uparrow}^\dg~(b_{g\downarrow}^\dg)$ statistically interact as charge and monopole.
 Similarly, the last two excitations in Eq.~(\ref{eq:four_external_monopole}), labeled as $M_{b+}$ and $M_{b-}$, are bosons.
@@ -1524,8 +1542,8 @@ Naively, one may identify the $U_s(1)$ charge as $q_s$.
 However, it is no longer true after condensation.
 In fact, in the condensed phase, the ``true'' $U_s(1)$ charge carried by the excitation labeled as $(q_g,m_g;q_s,m_s)$ is
 \begin{align}
-Q_s=q_s+m_g
-\label{eq:qs_charge_in_condensed_phase}
+  Q_s=q_s+m_g
+  \label{eq:qs_charge_in_condensed_phase}
 \end{align}
 To see this, we point out that physically, in the condensed phase, $D\sim M_{g}S^+$ form a Debye-plasma with short-range interaction.
 Quasi-particle $(q_g,m_g;q_s,m_s)$ would be Debye screened by $D$'s: it will be surrounded by a cloud of $D$'s and $D^\dg$'s with total $D$ number equals to $-m_g$.
