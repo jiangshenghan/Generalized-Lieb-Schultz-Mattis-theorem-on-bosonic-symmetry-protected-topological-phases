@@ -5,26 +5,7 @@
 %  3)  latex apssamp.tex
 %  4)  latex apssamp.tex
 %
-\documentclass[%
-  reprint,
-%superscriptaddress,
-%groupedaddress,
-%unsortedaddress,
-%runinaddress,
-%frontmatterverbose, 
-%preprint,
-%showpacs,preprintnumbers,
-%nofootinbib,
-%nobibnotes,
-%bibnotes,
-  amsmath,amssymb,
-  aps,pra,
-%prb,
-%rmp,
-%prstab,
-%prstper,
-%floatfix,
-]{revtex4-1}
+\documentclass[reprint,amsmath,amssymb,aps,pra,]{revtex4-1}
 
 \usepackage{graphicx}
 \usepackage{dcolumn}
@@ -33,6 +14,7 @@
 \usepackage{tikz,pgf}
 \usetikzlibrary{snakes}
 \usepackage{color}
+\usepackage{extarrows}
 %\usepackage[mathlines]{lineno}% Enable numbering of text and display math
 %\linenumbers\relax % Commence numbering lines
 
@@ -928,6 +910,7 @@ Let us also introduce boundary operators for later use:
   \label{eq:simplicial_homology_bdry_operator}
 \end{align}
 The geometric meaning for $\partial^p$ is clear: for a given $p$-simplex, it takes out all boundary $p-1$-simplex, where $\pm$ sign indicates whether the orientation of the boundary $p-1$-simplex is consistent or inconsistent with the bulk.
+It is easy to check that $\partial^{p-1}\partial^{p}=0$.
 
 For later convenience, we also define action of boundary operator $\partial$ on the ket space as
 \begin{align}
@@ -1018,7 +1001,7 @@ where $\exp[\ii\alpha(g)]$ is the quantum number for $g$ action, namely, $\alpha
 
 It is straightforward to see that the symmetric condition puts the following constraint on $\phi$:
 \begin{align}
-  &\sum_{p=0}^d\sum_{[i_0\cdots i_{p}]\in Y_p}\phi_{[i_0\cdots i_{p}]}(g-1,g_{i_0},\dots,g_{i_{p+1}})=\alpha(g)~,\notag\\ 
+  &\sum_{p=0}^d\sum_{[i_0\cdots i_{p}]\in Y_p}\phi_{[i_0\cdots i_{p}]}(g-1,g_{i_0},\dots,g_{i_{p}})=\alpha(g)~,\notag\\ 
   \label{eq:equivariant_cochain_sym_condition}
 \end{align}
 for arbitrary configuration $\{g_1,\ldots,g_N\}$.
@@ -1032,17 +1015,19 @@ And $\pm$ is understood as formal summation/subtraction, and should not be confu
 %This solution only gives a trivial symmetric phase, but fails to capture more exotic bosonic SPT phases.
 %{\color{red} Prove this solution is coboundary?}
 
-To simplified Eq.~(\ref{eq:equivariant_cochain_sym_condition}) and obtain solutions, we define two useful operators acting on $\phi$.
+To simplify Eq.~(\ref{eq:equivariant_cochain_sym_condition}) and obtain solutions, we define two useful operators acting on $\phi$.
 The first operator $\dd_\wedge$ is defined similarly as the coboundary operator for group cochain in Eq.~(\ref{eq:group_coboundary_operator}):
 \begin{align}
   &(\dd_\wedge\phi_{[i_0\ldots i_{p}]})(g_0,\cdots,g_{p+2})\notag\\
   =&\sum_{k=0}^{p+2}(-1)^k\phi_{[i_0\ldots i_{p}]}(g_0,\cdots,\hat{g}_k,\cdots,g_{p+2})
+  \label{eq:up_coboundary}
 \end{align}
 
 The second operator, labeled as $\dd_>$, is induced by boundary operator defined in Eq.~(\ref{eq:ket_bdry_operator}).~(We should treat the subscript $\Delta^p$ as ket state $\langle\Delta^p|$.)
 Consider $p$-simplex $\Delta^p$, we define $(\dd_>\phi)_{\Delta^p}$ as
 \begin{align}
   (\dd_>\phi)_{\Delta^p}\equiv \phi_{\Delta^p\partial}
+  \label{eq:right_coboundary}
 \end{align}
 where $\Delta^p\partial=\langle\Delta^p|\partial^{p+1}\in \widetilde{C}_{p+1}(Y)$, and we define
 \begin{align}
@@ -1053,46 +1038,64 @@ where $\Delta^p\partial=\langle\Delta^p|\partial^{p+1}\in \widetilde{C}_{p+1}(Y)
 The physical meaning of $\dd_>$ is clear:
 it generates wavefunction at $p$-dimensional interface of several $p+1$-simplices.
 By inserting definition of boundary operator in Eq.~(\ref{eq:simplicial_homology_bdry_operator}), we have
-{\color{red} check the following expression}
 \begin{align}
   &(\dd_>\phi)_{[i_0\dots i_{p}]}(g_0,\cdots,g_{p+2})\equiv\notag\\
-  &\sum_{k=0}^{p+1}\sum_{\substack{[\dots i_{k-1},j,\\i_{k}\dots]\in Y_{p+1}}}(-1)^k\phi_{[\dots i_{k-1},j,i_{k}\dots]}(g_0,\cdots,g_{p+2})
+  &\sum_{k=0}^{p+1}\sum_{\substack{i_{k-1}<j<i_k\\ [\dots i_{k-1},j,i_{k}\dots]\in Y_{p+1}}}(-1)^k\phi_{[\dots i_{k-1},j,i_{k}\dots]}(g_0,\cdots,g_{p+2})
 \end{align}
-Notice that for any $d$-simplex $\Delta^d$, we have $(\partial\phi)_{\Delta^d}=0$.
-{\color{red} Geometrical interpretation of these two operators?}
+Notice that for any $d$-simplex $\Delta^d$, we have $(\dd_>\phi)_{\Delta^d}=0$.
+We mention that $d_>$ is also a coboundary operator: we have $d_>^2=0$, which is due to $\partial^2=0$.
 
 Now, let us simplify Eq.~(\ref{eq:equivariant_cochain_sym_condition}) as
 \begin{widetext}
   \begin{align}
-    &\sum_{p}\sum_{[i_0\cdots i_{p}]}\phi_{[i_0\cdots i_{p}]}(g-1,g_{i_0},\dots,g_{i_{p+1}})\notag\\
-    =&\sum_p\sum_{[i_0\dots]}\left\{ \dd \phi_{[i_0\cdots i_{p}]}(1,g,g_{i_0},\cdots,g_{i_{p+1}})+\sum_{k=1}^{p+1}(-1)^k\phi(1,g,g_{i_0},\cdots,\hat{g}_{i_k},\cdots,g_{i_{p+1}}) \right\}\notag\\
-    =&\sum_{p=0}^{d-1}\sum_{[i_0\dots]}\left\{ \left(\dd\phi_{[i_0\cdots i_{p}]} +(\partial\phi)_{[i_0\dots i_{p}]}\right)(1,g,g_{i_0},\cdots,g_{i_{p+1}})\right\}
-    -\sum_{i}\phi_{[i]}(1,g)\notag\\
+    &\sum_{p}\sum_{[i_0\cdots i_{p}]}\phi_{[i_0\cdots i_{p}]}(g-1,g_{i_0},\dots,g_{i_{p}})\notag\\
+    =&\sum_p\sum_{[i_0\dots]}\left\{ \dd \phi_{[i_0\cdots i_{p}]}(1,g,g_{i_0},\cdots,g_{i_{p}})-\sum_{k=0}^{p}(-1)^k\phi(1,g,g_{i_0},\cdots,\hat{g}_{i_k},\cdots,g_{i_{p}}) \right\}\notag\\
+    =&\sum_{p=0}^{d-1}\sum_{[i_0\dots]}\left\{ \Big((\dd_\wedge-\dd_>)\phi\Big)_{[i_0\ldots i_{p}]}(1,g,g_{i_0},\cdots,g_{i_{p+1}})\right\}-\sum_{i}\phi_{[i]}(1,g)\notag\\
+      %\left(\dd\phi_{[i_0\cdots i_{p}]} +(\partial\phi)_{[i_0\dots i_{p}]}\right)
     =&\alpha(g)\!\!\mod 2\pi
   \end{align}
   for any $|g_1,g_2,\cdots,g_N\rangle$ state.
   Thus, symmetric wavefunction requires 
   \begin{align}
-    \left(\dd\phi_{\Delta^p} +(\partial\phi)_{\Delta^p}\right)(1,g,g_1,\cdots,g_{p+1})=f_{\Delta^p}(g)~,\quad \forall \Delta^p\in Y_p~,\forall g_i\in SG~.
+    \Big( (\dd_\wedge-\dd_>)\phi\Big)_{\Delta^p}(1,g,g_1,\cdots,g_{p+1})=f_{\Delta^p}(g)~,\quad \forall \Delta^p\in Y_p~,\forall g_i\in SG~,~0\le p\le d
   \end{align}
   for some function $f$.
+\end{widetext}
   Here, we focus on a special case where
   \begin{align}
-    \dd\phi_{\Delta^p}+(\partial\phi)_{\Delta^p}=0~,\quad\forall \Delta^p\in Y_p~,~0\le p\le d~.
+    (\dd_\wedge-\dd_>)\phi=0
     \label{eq:equivariant_cocycle_condition}
   \end{align}
   {\color{red} Can we prove this is the only possibility?}
-  Mathematically, it is equivalent to say that $\phi$ belongs an equivariant cohomology $Z^d_{SG}[X;U(1)_{PT}]$, where $X$ is the dual lattice of $Y$.
+  Mathematically, it is equivalent to say that $\phi$ belongs an equivariant cocycle $Z^{d+1}_{SG}[X;U(1)_{PT}]$, where $X$ is the dual lattice of $Y$.
   We will discuss this in full detail in Appendix~\ref{subapp:equivariant_cohomology_math_formulation}.
-  In this case, quantum number for $g$ action is simply given by $\exp[\ii\alpha(g)]=\exp\left[\ii\sum_{i=1}^N \phi_{[i]}(1,g)\right]$.
-  {\color{red} Do they always form representation? Relate $\phi_{[i]}$ to filling fraction? Does this phenomena relate to filling constraint?}
-\end{widetext}
 
-There is a clear physical interpretation for Eq.~(\ref{eq:equivariant_cocycle_condition}), which is related to real space construction of SPT phases.
+  In this case, quantum number for $g$ action is simply given by $\exp[\ii\alpha(g)]=\exp\left[\ii\sum_{i=1}^N \phi_{[i]}(1,g)\right]$.
+  Let us prove this phase factor forms a 1D representation of $SG$ as a consistency check.
+  Consider $g_2g_1$ action, we expect $\alpha(g_2)+\rho_\TT(g_2)\alpha(g_1)=\alpha(g_1g_2)$.
+  Expressed in $\phi_{[i]}$, we have
+  \begin{align}
+    &\alpha(g_2)+\rho_\TT(g_2)\alpha(g_1)\notag\\
+    =&\sum_i\left(\phi_{[i]}(1,g_2)+\rho_\TT(g_2)\phi_{[i]}(1,g_2)\right)\notag\\
+    =&\sum_i\left( \phi_{[i]}(1,g_2)+\phi_{g_2([i])}(g_2,g_2g_1) \right)\notag\\
+    =&\sum_i\left( \dd_\wedge\phi_{[i]}(1,g_2,g_2g_1)+\phi_{[i]}(1,g_2g_1) \right)\notag\\
+    =&\sum_i\left( \dd_>\phi \right)_{[i]}(1,g_2,g_2g_1)+\alpha(g_2g_1)\notag\\
+    =&\alpha(g_2g_1)
+    \label{}
+  \end{align}
+  where we use Eq.~(\ref{eq:equivariant_cochain_condition}) to obtain the third line, use Eq.~(\ref{eq:equivariant_cocycle_condition}) to obtain the fifth line and the last equation is due to 
+  \begin{align}
+    \sum_{[i]}(\dd_>\phi)_{[i]}=\phi_{\sum_i[i]\partial}=0
+    \label{}
+  \end{align}
+  by the definition of boundary operator $\partial$.
+
+The physical interpretation for Eq.~(\ref{eq:equivariant_cocycle_condition}) is related to real space construction of SPT phases.
 To see this, let us first consider Eq.~(\ref{eq:equivariant_cocycle_condition}) for a $d$-simplex $\Delta^d$.
-In this case, we have $(\partial\phi)_{\Delta^d}=0$, and the cocycle condition becomes
+In this case, we have $(\dd_>\phi)_{\Delta^d}=0$, and the equivariant cocycle condition becomes
 \begin{align}
-  \dd\phi_{\Delta^d}=0
+  \dd_\wedge\phi_{\Delta^d}=0
+  \label{eq:equivariant_cocycle_d_simplex}
 \end{align}
 The above equation is very similar to the group cocycle condition. 
 However, notice that the homogeneous condition defined in Eq.~(\ref{eq:equivariant_cochain_condition}) is different from the usual homogeneous condition Eq.~(\ref{eq:homo_cochain_def}) for group cochain.
@@ -1103,22 +1106,39 @@ In particular, when restrict on $p$-simplex $\Delta^p$ and its little group $SG_
 \end{align}
 We call such $\phi_{\Delta^p}$ as $SG$-valued $SG_{\Delta^p}$ group $p+1$-cochain, labeled as $C_{SG}^{p+1}[SG_{\Delta^p},U(1)_\TT]$.
 In this case, we claim that cocycle conditions for $\phi_{\Delta^d}$~(and also the corresponding coboundary conditions) indicate that $\phi_{\Delta^d}$ is classified by $H^{d+1}[SG_{\Delta^d},U(1)_\TT]$.
-Furthermore, if two simplex $\Delta^d_1$ and $\Delta^d_2$ are related by some lattice symmetry $g$, according to Eq.~(\ref{eq:equivariant_cochain_condition}), $\phi_{\Delta_1^d}$ and $\phi_{\Delta_2^d}$ are also related to each other.
+Furthermore, if two simplex $\Delta^d_1$ and $\Delta^d_2$ are related by some lattice symmetry $g$, according to Eq.~(\ref{eq:equivariant_cochain_condition}), $\phi_{\Delta_1^d}$ and $\phi_{\Delta_2^d}$ are related to each other.
 
-Physically, we can interpret the above result in the following way: we put a $d$-dimensional SPT phase protected by $SG_{\Delta^d}$ phases on a $d$-simplex $\Delta^d$, 
-and for symmetry related $d$-simplices, we put the ``same'' SPT phases\footnote{Strictly speaking, in general, for symmetry related simplex $\Delta_1$ and $\Delta_2=g(\Delta_1)$, $SG_{\Delta_1}$ and $SG_{\Delta_2}$ are not the same, and they are related as $SG_{\Delta^2}=g\cdot SG_{\Delta^1}\cdot g^{-1}$.
+Physically, we can interpret Eq.~(\ref{eq:equivariant_cocycle_d_simplex}) in the following way: we are allow to put a $d$-dimensional SPT phase protected by $SG_{\Delta^d}$ phases on a $d$-simplex $\Delta^d$. 
+For symmetry related $d$-simplices, we should put the ``same'' SPT phases\footnote{Strictly speaking, in general, for symmetry related simplex $\Delta_1$ and $\Delta_2=g(\Delta_1)$, $SG_{\Delta_1}$ and $SG_{\Delta_2}$ are not the same, and they are related as $SG_{\Delta^2}=g\cdot SG_{\Delta^1}\cdot g^{-1}$.
 Yet they have the same group structure, and in this sense we put the same SPT phases on $\Delta_1$ and $\Delta_2$}.
-%Notice that, in the current stage, there is no constraint on SPT phases in different $d$-simplices, and in general they can be different from each other.
+Notice that, in the current stage, there is no constraint on SPT phases in symmetry unrelated $d$-simplices.
 
-For $p<d$, physical meaning of Eq~(\ref{eq:equivariant_cocycle_condition}) can be interpreted as following.
-$(\partial\phi)_{\Delta^p}$ generates boundary wavefunctions at $\Delta^p$ for all $p+1$-simplices intersecting at $\Delta^p$.
-Similar as the discussion in Appendix~\ref{subapp:spt_bdry_wf}, the cocycle condition means that $(\partial\phi)_{\Delta^p}$ is a coboundary, which can be symmetrically gapped out by $\dd\phi_{\Delta^p}$.
+Now, let us give a physical interpretation of Eq.~(\ref{eq:equivariant_cocycle_condition}) for $p$-simplices with $p<d$.
+There are two cases.
+The first case is that $\phi_{\Delta^{p'}}=0$ for all $\Delta^{p'}$ with $p'>p$.
+The equivariant cocycle condition becomes
+\begin{align}
+  \dd_\wedge\phi_{\Delta^p}=0
+  \label{}
+\end{align}
+As we discussed before, $\phi_{\Delta^p}$ is a $SG$-valued $SG_{\Delta^p}$ $p+1$-cochain, which describes the decoration of $p$-dimensional SPT phase on $p$-simplices.
+For the second case where $\phi_{\Delta^{p'}}\neq 0$ for some $p'>p$, the equivariant cocycle condition reads
+\begin{align}
+  [(\dd_\wedge-\dd_>)\phi]_{\Delta^p}=\dd_\wedge\phi_{\Delta^p}-\phi_{\Delta^p\partial}=0
+  \label{}
+\end{align}
+which can be interpreted as ``no-open-edge'' condition.
+Namely, $\phi_{\Delta^p\partial}$, which is wavefunction on interface of simplices $\Delta^{p+1}$ satisfying $\langle\Delta^{p+1}|\partial|\Delta^p\rangle\neq0$, should be able to be gapped out by ``a mass term'' $\dd_\wedge\phi_{\Delta^p}$.
 
-To see the physical interpretation of $\phi_{\Delta^p}$ for $p<d$, let us consider quantum states where $\phi_{\Delta^p}\neq 0$ and $\phi_{\Delta^{p'}}=0$ for all $\Delta^{p'}\in Y_{p'}$ with $p'>p$. 
-In this case, $\phi_{\Delta^p}$ is a $SG$-valued $SG_{\Delta^p}$ $p+1$-cocycle, which is classified by cohomology group $H^{p+1}[SG_{\Delta^p},U(1)_{\TT}]$.
-Thus, we can view this state as a symmetric construction by decorating $p$-simplices with $p$-dimensional SPT phases.
-However, whenever $\phi_{\Delta^{p'}}\neq 0$ for some $p'>p$, $\phi_{\Delta^p}$ is no longer a cocycle, and the physical interpretation of $\phi_{\Delta^p}$ becomes more complicated.
-{\color{red} Discuss more on \ref{subapp:equivariant_cohomology_math_formulation}?}
+%For $p<d$, physical meaning of Eq~(\ref{eq:equivariant_cocycle_condition}) can be interpreted as following.
+%$(\partial\phi)_{\Delta^p}$ generates boundary wavefunctions at $\Delta^p$ for all $p+1$-simplices intersecting at $\Delta^p$.
+%Similar as the discussion in Appendix~\ref{subapp:spt_bdry_wf}, the cocycle condition means that $(\partial\phi)_{\Delta^p}$ is a coboundary, which can be symmetrically gapped out by $\dd\phi_{\Delta^p}$.
+%
+%To see the physical interpretation of $\phi_{\Delta^p}$ for $p<d$, let us consider quantum states where $\phi_{\Delta^p}\neq 0$ and 
+%In this case, $\phi_{\Delta^p}$ is a $SG$-valued $SG_{\Delta^p}$ $p+1$-cocycle, which is classified by cohomology group $H^{p+1}[SG_{\Delta^p},U(1)_{\TT}]$.
+%Thus, we can view this state as a symmetric construction by decorating $p$-simplices with $p$-dimensional SPT phases.
+%However, whenever , $\phi_{\Delta^p}$ is no longer a cocycle, and the physical interpretation of $\phi_{\Delta^p}$ becomes more complicated.
+%{\color{red} Discuss more on \ref{subapp:equivariant_cohomology_math_formulation}?}
 
 \subsection{Mod out equivalent classes}
 As we discussed in the last part, given a equivariant cocycle $\phi$ satisfying Eq.~(\ref{eq:equivariant_cocycle_condition}), we are able to construct a symmetric fixed point wavefunction.
@@ -1128,17 +1148,19 @@ Namely, we should figure out what is equivariant coboundary.
 {\color{red} Spectral sequence method to solving equivariant cohomology.}
 
 \subsection{Mathematical formulation}\label{subapp:equivariant_cohomology_math_formulation}
-In this part, we provide a mathematical description of the classification and construction of bosonic topological crystalline states.
+In this part, we provide a mathematical description for the classification and construction of bosonic topological crystalline states.
 As we will see, the construction of symmetric wavefunctions discussed in the last two parts naturally fits to the framework of equivariant cohomology\cite{Brown2012cohomology,ThorngrenElse2018gauging}. 
+We will also provide an algorithm, known as spectral sequence method, to solve equivariant cohomology classification for a given system.
 
+\subsubsection{Dual lattice formulation}
 In order to be consistent with the convention in mathematical literature, let us define the dual lattice $X$ of the direct lattice $Y$.
 When $Y$ is a triangulated space, $X$ is a trivalent lattice.
 The collection of $p$-cells in $X$ is labeled as $X_p$.
-By definition, in $d$-dimension space, there is a one-to-one correspondence between ${\Delta^p}\in Y_p$ and $\bar{\Delta}^{d-p}\in X_{d-p}$, as shown in Fig~\ldots.
+By definition, there is a one-to-one correspondence between ${\Delta^p}\in Y_p$ and $\bar{\Delta}^{d-p}\in X_{d-p}$ where $d$ is the space dimension, as shown in Fig.~()<++>.
 And orientation of $\bar{\Delta}^{d-p}$ is induced by orientation of $\Delta^p$ in the following way.
-By definition, orientation of a manifold is determined by a local coordinate of this manifold.
+Remember that orientation of a manifold is determined by a local coordinate of this manifold.
 We denote the local coordinate for $\Delta^p$ as $\{\vec{e}_1,\cdots,\vec{e}_p\}$, which is induced by its branching structure, as shown in Eq.~(\ref{eq:branch_local_coord}).
-For $\bar{\Delta}^{d-p}$, the local coordinate $\{\vec{e'}_1,\cdots,\vec{e'}_{d-p}\}$ is chosen to such that $\{\vec{e}_1,\cdots,\vec{e}_p,\vec{e'}_1,\cdots,\vec{e'}_{d-p}\}$ matches orientation of the underlying manifold.
+Then, for $\bar{\Delta}^{d-p}$, the local coordinate $\{\vec{e'}_1,\cdots,\vec{e'}_{d-p}\}$ is chosen such that $\{\vec{e}_1,\cdots,\vec{e}_p,\vec{e'}_1,\cdots,\vec{e'}_{d-p}\}$ matches orientation of the underlying manifold.
 
 Action of symmetry $g\in SG$ on $X$ is induced by action of $g$ on $Y$.
 By construction, for arbitrary $\Delta^p_1\in Y_p$, there exists $\Delta^p_2\in Y_p$, such that $\Delta^p_2=g(\Delta^p_1)$.
@@ -1146,7 +1168,7 @@ Thus, for $\bar{\Delta}^{d-p}_1\in X_{d-p}$, we have $\bar{\Delta}_2^{d-p}=\rho_
 {\color{red} Fig for direct lattice and dual lattice.}
 
 We mention that although we focus on the case where $Y$ is a triangulated space~(and $X$ is trivalent), equivariant cohomology is defined for much more general context. 
-For example, in Ref.~\cite{SongFangQi2018SongFangQi2018,ElseThorngren2018crystalline}, they consider an $SG$-symmetric cellular decomposition of the underlying manifold, which includes triangulated space as a special case.
+For example, Ref.~\cite{SongFangQi2018SongFangQi2018,ElseThorngren2018crystalline} consider an $SG$-symmetric cellular decomposition of the underlying manifold, which includes triangulated space as a special case.
 
 Local Hilbert spaces are associated with elements of $X_d$. 
 Fixed point wavefunctions are generated by function $\phi$, as shown in Eq.~(\ref{eq:equivariant_cochain_wf}).
@@ -1166,16 +1188,16 @@ We now impose Eq.~(\ref{eq:equivariant_cochain_condition}) to $\phi$, and call s
 Collection of equivariant $(d+1)-$cochains forms an Abelian group induced by $U(1)$, labeled as $C^{d+1}_{eqv}$. 
 We will define coboundary operator for $C^{d+1}_{eqv}$ later.
 
-Actually, collection of $\phi^{p+1,d-p}$'s for a fixed $p$ also forms an Abelian group, labeled as $C^{p+1,d-p}$.
+\subsubsection{Double cochain complex and equivariant cohomology}
+Actually, collection of $\phi^{p,q}$'s for some fixed $p$ and $q$ also forms an Abelian group induced by $U(1)$, labeled as $C^{p,q}$.
 Apparently, we have
 \begin{align}
-  C^{d+1}_{eqv}=\bigoplus_{p\in\ZZ} C^{p+1,d-p}
+  C^{p+q}_{eqv}=\bigoplus_{p,q\in\ZZ} C^{p,q}
   \label{}
 \end{align}
 Here, $C^{p,q}$ is set to be zero~(group with only identity element) when $p<0$ or $q<0$.
-{\color{red} How about $C^{0,d+1}$?}
 
-Let us study $C^{p,q}$ in more detail.
+Let us study the structure of $C^{p,q}$ in more detail.
 We claim that $C^{p,q}$ actually forms a double cochain complex: by fixing $q$ and focusing on function acting on $p+1$-tuple of group elements, we obtain a group cochain complex $C^{\bullet,q}$, while by fixing $p$ and focusing on function acting on $X_q$, we obtain another cochain complex $C^{p,\bullet}$.
 Let us study these two cases separately in the following.
 \begin{enumerate}
@@ -1185,23 +1207,23 @@ Let us study these two cases separately in the following.
       \phi^{p,q}_\#:(g_0,\cdots,g_{p})\mapsto \phi^{p,q}_{\#}(g_0,\cdots,g_{p})
       \label{}
     \end{align}
-    where $\phi_{\#}(g_0,\cdots,g_{p+1})$ can be viewed as $q$-cell dependent phase factors.
-    And $U(1)$ phase on a $q$-cell $\bar{\Delta}^q$ is given as $\phi_{\bar{\Delta}^q}(g_0,\cdots,g_{p+1})$.
+    where $\phi_{\#}(g_0,\cdots,g_{p+1})$ can be viewed as $q$-cell dependent phase factors, where $U(1)$ phase on a $q$-cell $\bar{\Delta}^q$ is given as $\phi_{\bar{\Delta}^q}(g_0,\cdots,g_{p+1})$.
 
-    We call coboundary map for this cochain as $\dd_\wedge$, which is defined as
+    Such coboundary map is identified as $\dd_\wedge$ in Eq.~(\ref{eq:up_coboundary}), and a more precise definition reads
     \begin{align}
-      \dd_\wedge:~& C^{p,q}\rightarrow C^{p+1,q}~,\notag\\
+      \dd_\wedge^p:~& C^{p,q}\rightarrow C^{p+1,q}~,\notag\\
       &\phi_{\#}^{p,q}(g_0,\cdots,g_{p})\mapsto\notag\\
       &\sum_{k=0}^{p+1}(-1)^k\phi^{p,q}_{\#}(g_0,\cdots,\hat{g}_k,\cdots,g_{p+1})~.
       \label{eq:double_complex_vertical_d}
     \end{align}
-    It is straightforward to show that this coboundary operator satisfies the condition $\dd_\wedge^2=0$, which makes $C^{\bullet,q}$ a group cochain complex linked by $d_\wedge$, similar as Eq.~(\ref{eq:cochain_complex}).
-    In particular, the coefficient $M$ for this group cochain complex is identified as the $q$-cell dependent phase factors:
+    As discussed before, this coboundary operator satisfies the condition $\dd_\wedge^{p+1}\dd_\wedge^p=0$, which makes $C^{\bullet,q}$ a cochain complex linked by $d_\wedge$ for a fixed $q$.
+
+    We claim that it is a group cochain complex, labeled as $C^{\bullet,q}[SG,M]$, where the coefficient $M$ for this group cochain complex is identified as the $q$-cell dependent phase factors:
     \begin{align}
       M=\bigoplus_{j=1}^{N_q} U(1)
       \label{eq:eqv_cohomology_coeff}
     \end{align}
-    where $N_q$ is the number elements of $X_q$
+    Here, $N_q$ is the number elements of $X_q$.
 
     What is the group action on $M$?
     We define the action of $g\in SG$ on $M$ as the diagonal action of $g$ on $X_q$ and $U(1)_{P\TT}$~(the reason to choose $U(1)_{P\TT}$ will be clear later): for $f_{\#}\in M$, and $\bar{\Delta}^q\in X_q$, we have
@@ -1237,13 +1259,12 @@ Let us study these two cases separately in the following.
       C^{\bullet,q}\simeq \bigoplus_{\bar{\Delta}^q\in \Sigma_q}C^\bullet_{SG}[SG_{\Delta^{d-q}},U(1)_\TT]
       \label{}
     \end{align}
-  \item To identify cochain complex with fixed $p$, we first define boundary operator $\partial^q$ acting on $C_q(X)$, which is the free Abelian group generated by $X_q$:
+  \item To identify cochain complex with fixed $p$, we first define boundary operator $\partial^q$ acting on the free Abelian group $C_q(X)$ as following
     \begin{align}
-      \partial^q:~& C(X_q)\rightarrow C(X_{q-1})
+      \langle \bar{\Delta}^{q-1}|\partial^q|\bar{\Delta}^q\rangle\equiv\langle\Delta^{d-q}|\partial^{d-q+1}|\Delta^{d-q+1}\rangle
       \label{}
     \end{align}
-    where the definition is given similar as Eq.~(\ref{eq:simplicial_homology_bdry_operator}). 
-    We often omit superscript when it can be determined from the context.
+    We often omit superscript of $\partial^q$ when it can be determined from the context.
     Apparently, we have $\partial^{q-1}\circ\partial^q=0$
 
     Let us consider function acting on $X_q$ induced by $C^{p,q}$ as
@@ -1252,18 +1273,76 @@ Let us study these two cases separately in the following.
       &\bar{\Delta}^q\mapsto\phi^{p,q}_{\bar{\Delta}^q}
       \label{}
     \end{align}
-
     We then define coboundary operator on this function $d_>:C^{p,q}\rightarrow C^{p,q+1}$ as following:
     \begin{align}
-      \dd_>\left(\phi^{p,q}\right)_{\bar{\Delta}^{q+1}}=\sum_{\bDelta^{q}\in X_{q}}\langle\bDelta^q|\partial\bDelta^{q+1}\rangle \phi^{p,q}_{\bDelta^{q}}
+      \dd_>^q\left(\phi^{p,q}\right)_{\bar{\Delta}^{q+1}}=(-1)^{p+q-d}\phi^{p,q}_{\partial\bar{\Delta}^{q+1}}
     \end{align}
-    {\color{red} define $\dd_>$ by $\partial$, $\dd_>^2=0$, chain complex}
+    It is straightforward to verify that $\dd_>^{q+1}\dd_>^{q}=0$, which makes $C^{p,\bullet}$ a cochain complex. 
+    Notice that the definition here differs from Eq.~(\ref{eq:right_coboundary}) by a phase factor.
+    And due to this phase factor, we can deduce that $(\dd_\wedge^p\dd_>^q+\dd_>^q\dd_\wedge^p)\phi^{p,q}=0$.
 \end{enumerate}
 
-{\color{red} $d_\wedge$ commutes with $d_>$, figure to show double complex}
-
-
+We define the ``total coboundary operator'' $\dd^{n}$ acting on $C^{n}_{eqv}$ as
+\begin{align}
+  \dd^n=\bigoplus_p(\dd_\wedge^p+\dd_>^{n-p}):C^{n}_{eqv}\rightarrow C^{n+1}_{eqv}
+  \label{}
+\end{align}
+Since $\dd_\wedge^2=\dd_>^2=0$ and $\dd_\wedge\dd_>+\dd_>\dd_\wedge=0$, it is easy to verify that
+\begin{align}
+  \dd^{n+1}\dd^n=0
+  \label{}
+\end{align}
+Namely, $C^{\bullet}_{eqv}$ is indeed a cochain complex linked by $\dd$.
+And the cohomology group for this cochain complex is named as equivariant cohomology, which is defined as
+\begin{align}
+  H^{n}_{SG}[X,U(1)_{P\TT}]\equiv\ker \dd^n/\imag\,\dd^{n-1}
+  \label{}
+\end{align}
+As seen from exact solvable models, the equivariant cohomology group $H^{d+1}_{SG}[X,U(1)_{P\TT}]$ classifies SPT phases protected by $SG$ defined on $d$-dimensional lattice $X$.
+When $X=\mathbb{R}^d$, $H^{d+1}_{SG}[X,U(1)_{P\TT}]=H^{d+1}[SG,U(1)_{P\TT}]$\cite{Brown2012cohomology}.
+This is consistent with the classification result of bosonic crystalline phases obtained in Ref.~\onlinecite{JiangRan2017,ThorngrenElse2018gauging}.
 {\color{red} Comment for the case where internal symmetry are continuous.}
+
+\subsubsection{Spectral sequence}
+In this part, we discuss the spectral sequence method to obtain equivariant cohomology group for a given symmetry group $SG$ and lattice $X$.
+
+First, we introduce a network representation for double cochain complex $C^{\bullet,\bullet}$ as following:
+\begin{widetext}
+  \begin{align}
+ %   \begin{matrix}
+ %     \vdots& & \vdots\quad\  & & \vdots\quad\ & & \vdots\quad\ & &\notag\\
+ %     \uparrow& & \uparrow\quad\  & & \uparrow\quad\ & & \uparrow\quad\ & &\notag\\
+ %   0 & \rightarrow & C^{d+1,0} & \xlongrightarrow{\dd_>} & C^{d+1,1} & \xrightarrow{\dd_>} & C^{d+1,2} & \rightarrow & \cdots\notag\\
+ %  \uparrow& & \big\uparrow \text{\scriptsize$\dd_\wedge$} & & \big\uparrow \text{\scriptsize$\dd_\wedge$} && \big\uparrow  \text{\scriptsize$\dd_\wedge$} & & \notag\\
+ %   0 & \rightarrow & C^{d,0} & \xrightarrow{\dd_>} & C^{d,1} & \xrightarrow{\dd_>} & C^{d,2} & \rightarrow & \cdots\notag\\
+ %     \uparrow& & \uparrow\quad\  & & \uparrow\quad\ & & \uparrow\quad\ & &\notag\\
+ %     \vdots& & \vdots\quad\  & & \vdots\quad\ & & \vdots\quad\ & &\notag\\
+ %     \uparrow& & \uparrow\quad\  & & \uparrow\quad\ & & \uparrow\quad\ & &\notag\\
+ %   0 & \rightarrow & C^{0,0} & \xrightarrow{\dd_>} & C^{0,1} & \xrightarrow{\dd_>} & C^{0,2} & \rightarrow & \cdots\notag\\
+ %    \uparrow& & \uparrow\quad\  & & \uparrow\quad\ & & \uparrow\quad\ & &\notag\\
+ %   0 & \rightarrow & 0 & \longrightarrow & 0 & \longrightarrow & 0 & \longrightarrow & \cdots
+ % \end{matrix}
+    \begin{matrix}
+      & & \vdots\quad\  & & \vdots\quad\ & & \vdots\quad\ & &\notag\\
+      & & \uparrow\quad\  & & \uparrow\quad\ & & \uparrow\quad\ & &\notag\\
+    \cdots & \rightarrow & C^{p+1,q-1} & \xlongrightarrow{\dd_>} & C^{p+1,q} & \xrightarrow{\dd_>} & C^{p+1,q+1} & \rightarrow & \cdots\notag\\
+    & & \big\uparrow \text{\scriptsize$\dd_\wedge$} & & \big\uparrow \text{\scriptsize$\dd_\wedge$} && \big\uparrow  \text{\scriptsize$\dd_\wedge$} & & \notag\\
+    \cdots & \rightarrow & C^{p,q-1} & \xrightarrow{\dd_>} & C^{p,q} & \xrightarrow{\dd_>} & C^{p,q+1} & \rightarrow & \cdots\notag\\
+    & & \big\uparrow \text{\scriptsize$\dd_\wedge$} & & \big\uparrow \text{\scriptsize$\dd_\wedge$} && \big\uparrow  \text{\scriptsize$\dd_\wedge$} & & \notag\\
+    \cdots & \rightarrow & C^{p-1,q-1} & \xrightarrow{\dd_>} & C^{p-1,q} & \xrightarrow{\dd_>} & C^{p-1,q+1} & \rightarrow & \cdots\notag\\
+      & & \uparrow\quad\  & & \uparrow\quad\ & & \uparrow\quad\ & &\notag\\
+      & & \vdots\quad\  & & \vdots\quad\ & & \vdots\quad\ & &
+  \end{matrix}
+    \label{}
+  \end{align}
+\end{widetext}
+Then, $C^{n}_{eqv}=\bigoplus_{p\in\ZZ} C^{p,n-q}$ is the direct sum of diagonal Abelian groups.
+Remember that this network is bounded by zeros from both left and below.
+Namely, $C^{p,q}=0$ for either $p<0$ or $q<0$.
+
+
+\subsection{SPT-LSM systems from spectral sequence}
+
 
 \section{SPT phases from condensation of fractional quasi-particles}\label{app:SPT_condensation}
 In this appendix, we will show that many bosonic SPT phases can be obtained by condensing fractional quasi-particle excitations.
