@@ -67,23 +67,32 @@
 %It is better to have one sentence to occupy the whole line. In this way, editing different sentences would not cause contradiction in git.
 
 \section{Introduction}\label{sec:intro}
-In recent years, symmetry protected topological~(SPT) phases have been attracted considerable research interest both theoretically and experimentally.
-SPT phases have trivial bulk excitations with protected boundary modes.
-Examples include topological insulators/superconductors, which can be realized by free fermion system. 
-In this paper, however, we will focus on bosonic SPT phases, such as 1D spin-1 AKLT state and 2D bosonic integer quantum Hall phase, which require strong interaction.
+In recent years, symmetry-protected topological~(SPT) phases have attracted considerable research interest both theoretically and experimentally.
+Nontrivial SPT phases have completely trivial bulk excitations, but support boundary states protected by symmetry.
+Examples of SPT phases include electronic topological insulators and superconductors, most of which can be realized by free fermion system. On the other hand, there exist a large family of SPT phases for bosonic systems which require strong interactions to be stabilized, such as 1D Haldane phase and 2D bosonic integer quantum Hall states. The necessity of having strong and often complex interactions significantly hinders the realization of those phases.
+
+Recently, several instances of LSM theorems for SPT phases have been discovered.  
+Here we use LSM-type theorem to refer to general constraints on the ground state of a lattice system, often forbidding a completely featureless ground state. 
+In the classic example of spin lattice models where one finds an odd spin quantum number in each unit cell, there can not be a non-degenerate (more precisely, short-range entangled) ground state preserving both spin rotation and translation symmetries. 
+In the LSM theorems for SPT phases, a SRE ground state is allowed, but it has to be a nontrivial SPT phase, i.e. with protected boundary states. 
+
+In fact, LSM theorems put more constraint on possible phases. 
+These constraints are understood more systematically in terms of matching 't Hooft anomalies, since the theorems can be interpreted using bulk-boundary correspondence of crystalline SPT phases in one dimension higher. 
+In other words, the ground state of a lattice system satisfying the conditions of a certain LSM theorem must be able to "resolve" the anomaly. 
+This interpretation does not directly carry over to LSM theorems for SPT phases, as the fact that a SRE ground state exists means the (fictitious) higher-dimensional bulk is topologically trivial. 
+Nevertheless, one can still derive nontrivial constraints on the SPT order in the symmetric phases. In the most interesting cases, the SPT order is protected just by the internal symmetries, i.e. "strong" SPT phases.
+
+In this work we discuss a general procedure to derive SPT-LSM theorems from ``conventional" LSM theorems. The procedure is based on the observation that all SPT-LSM theorems obtained so far require that lattice symmetries (translation symmetries in the known cases) are realized projectively. One starts from a ``conventional" LSM theorem, where the total symmetry group is a direct product of the lattice and internal symmetries. In such a system, one may realize a symmetric gauge theory. The LSM anomaly matching condition implies that symmetries have to be implemented nontrivially. We will then look for a realization where the gauge charge transforms projectively under the lattice symmetry (but linearly under the internal symmetry). Once such a gauge theory is identified, condensing gauge charges leads to a SPT phase and a candidate SPT-LSM theorem, where the gauge symmetry becomes a global symmetry. We then corroborate the argument with a more rigorous approach based on a real-space construction of crystalline SPT phases to find precisely the constraints on the ground state.  Using this method, we devise several new examples of SPT-LSM theorems, going beyond what have been known in literature in two ways: we show by example how such theorems can be established with just point-group symmetries (and internal symmetries), and we find an interesting example in 3D.
+We also notice that the gauge charge condensation approach can be used as a tool to guide the design of spin/boson Hamiltonians to realize SPT phases.
+
+The SPT-LSM theorems also have interesting implications for classifications of crystalline SPT phases. They highlight the dependence of the classification on the structure of the underlying Hilbert space when both lattice and internal symmetries are present. When lattice symmetries are realized projectively, certain SPT phases can exist if and only if the degrees of freedom in the system transform appropriately. 
+
+% "anomaly matching", constraint on possible symmetry enriched topological~(SET) phases.
+%An important lesson: fix global symmetry group, including onsite symmetries as well as lattice symmetries, different LSM systems realize different SET phases.
+%Question: can we generalize LSM systems to systems with all kinds of projective representations? Generalize SET phases to SPT phases, gapless phases...
 
 
-Review recent LSM theorem papers. This paper focus on bosonic systems.
-"Conventional" LSM system: projective representation per unit cell, no SRE phases allowed.
-{\color{red} Should we restrict ourselves in discrete group?}
-In fact, LSM theorem puts more constraint on possible symmetric phases:  "anomaly matching", constraint on possible symmetry enriched topological~(SET) phases.
-An important lesson: fix global symmetry group, including onsite symmetries as well as lattice symmetries, different LSM systems realize different SET phases.
-Question: can we generalize LSM systems to systems with all kinds of projective representations? Generalize SET phases to SPT phases, gapless phases...
-
-Consider systems with nontrivial projective representations, but without anomaly.
-In principle, SRE phases are allowed for those systems, however, we claim, they all have gapless edge/corner states, and thus must be SPT phases.
-
-Cohomological group $H^{d+1}(SG,U(1))$ classify systems with linear representation, and how do we classify SPT phases in projective rep systems?
+% Cohomological group $H^{d+1}(SG,U(1))$ classify systems with linear representation, and how do we classify SPT phases in projective rep systems?
 
 Three ways to approach this problem.
 First, argument based on entanglement, exclude trivial SRE phase, "derive" properties of edge states/symmetry defects.
@@ -1071,7 +1080,7 @@ Now, let us simplify Eq.~(\ref{eq:equivariant_cochain_sym_condition}) as
   We will discuss this in full detail in Appendix~\ref{subapp:equivariant_cohomology_math_formulation}.
 
   In this case, quantum number for $g$ action is simply given by $\exp[\ii\alpha(g)]=\exp\left[\ii\sum_{i=1}^N \phi_{[i]}(1,g)\right]$.
-  Let us prove this phase factor forms a 1D representation of $SG$ as a consistency check.
+ Let us prove this phase factor forms a 1D representation of $SG$ as a consistency check.
   Consider $g_2g_1$ action, we expect $\alpha(g_2)+\rho_\TT(g_2)\alpha(g_1)=\alpha(g_1g_2)$.
   Expressed in $\phi_{[i]}$, we have
   \begin{align}
