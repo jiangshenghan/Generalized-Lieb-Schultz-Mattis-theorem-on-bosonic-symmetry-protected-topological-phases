@@ -266,41 +266,41 @@ However, for the system discussed above, we will argue that all possible gapped 
 
 \subsection{Entanglement based argument}
 The following argument is based on entanglement properties.
-Given a quantum many-body wavefunction $|\psi\rangle$ on a 1D chains, one can ``cut'' the system to two halves along bond $(j,j+1)$ and do Schmit decomposition as
+Given a quantum many-body wavefunction $|\psi\rangle$ on a 1D chains, one can ``cut'' the system to two halves along bond $(j,j+1)$ and do Schmidt decomposition as
 \begin{align}
-  |\psi\rangle=\sum_i\lambda_i|\phi^L_i\rangle\otimes|\phi^R_i\rangle
+  |\psi\rangle=\sum_{i=1}^N\lambda_i|\phi^L_i\rangle\otimes|\phi^R_i\rangle
   \label{}
 \end{align}
-where $|\lambda_1|\le|\lambda_2|\le\cdots$. 
-$|\phi^{L/R}(i)\rangle$ are named as left/right entanglement states (respect to bond $(j,j+1)$).
+where $N$ is named as Schmidt rank, and we require $|\lambda_1|\ge|\lambda_2|\ge\cdots\ge\lambda_N$. 
+$|\phi^{L/R}(i)\rangle$ are left/right entanglement states (respect to bond $(j,j+1)$).
 It is well known that if $|\psi\rangle$ describes gapped symmetric ground state, the entanglement spectrum, defined as $\{-\ln|\lambda_i|^2\ |\ i=1,2,\cdots\}$, is also gapped[] in the thermodynamic limit.
 Furthermore, entanglement states transform projectively under the on-site symmetry group.
 Namely, for $g\in SG_{onsite}$, 
 \begin{align}
-  U_{g}^{L/R}|\phi^{L/R}_i\rangle=\sum_k (W_{g}^{L/R})_{ik}|\phi^{L/R}_k\rangle
+  U_{g}^{L/R}|\phi^{L/R}_i\rangle=\sum_k (V_{g}^{L/R})_{ik}|\phi^{L/R}_k\rangle
   \label{}
 \end{align}
-where $U_{g}^{L/R}$ is the physical symmetry action which acts on left/right system of bond $(j,j+1)$.
-And $W_g$ in general form some projective representation of $SG$.
-In particular, for $Z_4^g\times Z_4^h$ group, we have
+where $U_{g}^{L/R}$ is the physical symmetry which acts on left/right system.
+$V_g$ is an $N\times N$ matrix, which forms projective representation of $SG_{onsite}$.
+
+For $Z_4^g\times Z_4^h$ group, we have
 \begin{align}
-  &\sum_{k}(W_{g}^{L/R}\cdot W_h^{L/R})_{ik}|\phi^{L/R}_k\rangle\notag\\
-  =&\exp[\ii\frac{\pi}{2}\cdot\eta^{L/R}_{j+1/2}]\sum_{k} (W_h^{L/R}\cdot W_g^{L/R})_{ik}|\phi^{L/R}_k\rangle
+  &\sum_{k}(V_{g}^{L/R}\cdot V_h^{L/R})_{ik}|\phi^{L/R}_k\rangle\notag\\
+  =&\exp[\ii\frac{\pi}{2}\cdot\eta^{L/R}_{j+1/2}]\sum_{k} (V_h^{L/R}\cdot V_g^{L/R})_{ik}|\phi^{L/R}_k\rangle
   \label{}
 \end{align}
-where $\eta^{L/R}_{j+1/2}=\{0,1,2,3\}$ can be used to label the projective representation of entanglement states at bond $(j,j+1)$.
+where $\eta^{L/R}_{j+1/2}\in\{0,1,2,3\}$, which characterizes the projective representation of entanglement states at bond $(j,j+1)$.
 %and that of the right-half system as $\eta^R_{j+1/2}$.
 %By definition, we have $\eta^L_{j+1/2}=-\eta^R_{j+1/2}$, where ``='' is defined up to 4.
 
-Now, we are ready to argue the possible symmetric phases for this system.
-{\color{red} More derivation (based on MPS) about symmetry constraint on $\eta$?}
-First, due to $Z_4^g\times Z_4^h$ global symmetry, we conclude
+Now, we are ready to argue the possible symmetric phases for systems discussed in the last part.
+First, $Z_4^g\times Z_4^h$ onsite symmetry requires
 \begin{align}
   \eta^R_{j+1/2}+\eta^L_{j+1/2}=0~,\quad \eta^R_{j-1/2}+\eta^L_{j+1/2}=\eta_0
   \label{}
 \end{align}
 where ``='' is defined up to 4, and $\eta_0=2$ labels site projective representation.
-Second, from reflection symmetry along site $j$, we have 
+Second, reflection symmetry along site $j$ requires
 \begin{align}
   \eta^R_{j-1/2}=\eta^L_{j+1/2}
   \label{}
@@ -319,16 +319,16 @@ Indeed, in this case, in each unit cell, there is nontrivial projective represen
 On the other hand, if $\eta_0=0$, as one expects, there is a trivial solution with $\eta^{L/R}=0$, which gives trivial gapped symmetric phase.
 
 \subsection{SPT phases from domain wall condensation}
-In the following, we will argue the possible symmetric phases from domain wall point of view.
-The domain wall condensation picture would provide more insights on possible SPT phases, and it would also give us more hints to construct models realizing SPT phases.
+In the following, we will argue possible symmetric phases of this systems by considering condensation of domain walls.
 
-Now, let us perform the $Z_4$ version of Kramers-Wannier duality. We define
+First, let us perform the $Z_4$ version of Kramers-Wannier duality. We define
 \begin{align}
-  \tau^x_{j+1/2}=(\mu^z_j)^\dg\mu^z_{j+1}~,\quad \tau^z_{j+1/2}\equiv\prod_{k\le j}\mu^x_j
+  \tau^x_{j+1/2}=(\mu^z_j)^\dg\mu^z_{j+1}~,\quad (\tau^z_{j-1/2})^\dg\tau^z_{j+1/2}=\mu_j^x\nu_j^x
   \label{eq:z4_dw_duality}
 \end{align}
-where $\tau^z_{j+1/2}\tau^x_{j+1/2}=\ii \tau^x_{j+1/2}\tau^z_{j+1/2}$.
-Here, $\tau^x_{j+1/2}$ measures $g$ domain wall at bond $(j,j+1)$, while $\tau^z_{j+1/2}$ is $g$ domain wall creation operator.
+Notice that $\tau^z_{j+1/2}$ can be expressed as string operator: $\tau^z_{j+1/2}=\prod_{j'\le j}\mu^x_{j'}\nu^x_{j'}$.
+We have commutation relation: $\tau^z_{j+1/2}\tau^x_{j+1/2}=\ii \tau^x_{j+1/2}\tau^z_{j+1/2}$.
+Here, $\tau^x_{j+1/2}$ can be interpreted as measuring $g$-domain wall at bond $(j,j+1)$, and $\tau^z_{j+1/2}$ is the $g$-domain wall creation operator.
 
 %We point out that in a periodic chain, a unit $g$ domain wall is not local object, which should always appear with its anti-particle.
 %Thus, to capture global aspects and identify phases of original model, it is better to introduce a $\widetilde{Z_4}$ gauge field, and treat $g$ domain walls as $\widetilde{Z_4}$ gauge charges.
@@ -337,88 +337,94 @@ Here, $\tau^x_{j+1/2}$ measures $g$ domain wall at bond $(j,j+1)$, while $\tau^z
 %Second, $g$ domain wall has an additional $\widetilde{Z_4}$ symmetry, 
 %can carry nontrivial projective representation of other symmetry group.
 
-Equipped with the mapping defined in Eq.~(\ref{eq:z4_dw_duality}), we are able to work out the symmetry action on $g$ domain wall:
+Using the mapping defined in Eq.~(\ref{eq:z4_dw_duality}), we are able to work out the symmetry action on $g$ domain wall:
 \begin{align}
+  &g:\tau^z_{j+1/2}\rightarrow \tau^z_{j+1/2}\notag\\
   &h:\tau^z_{j+1/2}\rightarrow (-)^j\tau^z_{j+1/2}\notag\\
-  &P:\tau^z_{j+1/2}\rightarrow (\tau^z_{-j-1/2})^\dg\notag\\
+  &\sigma:\tau^z_{j+1/2}\rightarrow (\tau^z_{-j-1/2})^\dg\notag\\
   &T_{2x}:\tau^z_{j+1/2}\rightarrow \tau^z_{j+2+1/2}
   \label{eq:z4_dw_sym_action}
 \end{align}
-Besides, there is an additional $\widetilde{Z_4^g}$ domain wall ``conservation'' symmetry, which is generated by $\widetilde{g}=\prod_j\tau^x_{j+1/2}$, and acts as
+Besides, there is an additional $\widetilde{Z_4^g}$ ``$g$-domain wall conservation'' symmetry, which is generated by $\widetilde{g}=\prod_j\tau^x_{j+1/2}$, and acts as
 \begin{align}
   \widetilde{g}: \tau^z_{j+1/2}\rightarrow-\ii\tau^z_{j+1/2}
   \label{}
 \end{align}
 
-Now, let us consider possible phases obtained from domain wall variables.
-If domain wall is disordered, meaning $\langle\tau^z\rangle=0$, $Z_4^g$ symmetry would be broken.
-Thus, we would like to focus on the condensation phase of domain wall.
-We point out that naive condensation pattern of domain walls would always break global symmetries.
+Now, let us consider possible phases from domain wall point of view.
+If domain wall is disordered, meaning $\langle\tau^z\rangle=0$, $Z_4^g$ symmetry is broken.
+We are interested in symmetric phases, so we focus on condensation phases of domain wall, which preserve $Z_4^g$ symmetry.
+In the following, we will show that naive condensation pattern of domain walls always break global symmetries.
 
-To see this, let us calculate commutation relation between $h$ and $P$ when acting on domain walls:
+To see this, we notice that when acting on domain walls, $h$ and $\sigma$ have nontrivial commutation relation:
 \begin{align}
-  hP\circ\tau^z=-Ph\circ\tau^z(\equiv\widetilde{g}^2 Ph\circ\tau^z)
+  h\sigma\circ\tau^z=-\sigma h\circ\tau^z=\widetilde{g}^2 \sigma h\circ\tau^z
   \label{eq:dw_z4P_proj_rep}
 \end{align}
-This anti-commutation relation indicates that the representation of symmetry group on $\tau^z$ must be non-Abelian.
+We claim that this nontrivial commutation relation forbids a symmetric phase by condensing $\tau^z$ variables. 
+Actually $\tau^z$ condensed phases either break $Z_4^h$ symmetry or break $\sigma$ symmetry.
 
-We point out that, since domain walls are non-local objects, in general, $\tau^z$ forms a projective representation of $SG$ with $\widetilde{Z_4^g}$ coefficient.
-In other words, $\tau^z$ form a linear representation of $PSG$[Wen], which is defined as an $SG$ extension by $\widetilde{Z_4^g}$, where $SG$ is the global symmetry group including both onsite and space symmetry.
-In the current settings, all possible $PSG$ is classified by second group cohomology with coefficient $\widetilde{Z_4^g}$: $H^2\left[ SG,\left(\widetilde{Z_4^g}\right)_P \right]$.
-Here, the subscript $P$ denotes the nontrivial action of reflection on $\widetilde{Z_4^g}$:
+For example, let us consider the uniform condensation pattern of $\tau^z$: $\langle\tau^z_{j+1/2}\rangle\neq0$ which is independent of $j$.
+Since domain walls are non-local variables, to determine the symmetry breaking pattern, we should consider representation of local observables formed by $\tau^z$'s, which can be expressed as $(\tau^z_{j+1/2})^\dg\tau^z_{k+1/2}+h.c.$.
+Under $Z_4^h$ transformation, local operators such as $(\tau^z_{j-1/2})^\dg\tau^z_{j+1/2}+h.c.$ obtains minus sign, and carries double $Z_4^h$ charge.
+Thus, this condensation phase breaks $Z_4^h$ symmetry down to $Z_2$.
+
+On the other hand, we may only condense even bond $\tau^z$: $\langle\tau^z_{2j+1/2}\rangle\neq 0$, $\langle\tau^z_{2j-1/2}\rangle=0$.
+In this case, $Z_4^h$ is preserved, since all local operators with nonzero expectation value, which are $\tau^z_{2j+1/2}\tau^z_{2k+1/2}$, is a $Z_4^h$ singlet.
+However, this condensation pattern breaks $\sigma$ symmetry, since $\sigma$ maps even bond $\tau^z$ to odd bond $\tau^z$.
+
+%We point out that, since domain walls are non-local objects, in general, $\tau^z$ forms a projective representation of $SG$ with $\widetilde{Z_4^g}$ coefficient.
+%In other words, $\tau^z$ form a linear representation of $PSG$[Wen], which is defined as an $SG$ extension by $\widetilde{Z_4^g}$, where $SG$ is the global symmetry group including both onsite and space symmetry.
+%In the current settings, all possible $PSG$ is classified by second group cohomology with coefficient $\widetilde{Z_4^g}$: $H^2\left[ SG,\left(\widetilde{Z_4^g}\right)_P \right]$.
+%Here, the subscript $P$ denotes the nontrivial action of reflection on $\widetilde{Z_4^g}$:
+%\begin{align}
+%  P\cdot\widetilde{g}\cdot P^{-1}\circ\tau^z=\widetilde{g}^{-1}\circ\tau^z
+%  \label{eq:dw_Pigg_action}
+%\end{align}
+%If $PSG$ corresponds to a nontrivial element in $H^2$, condensing domain walls would always leads to spontaneous symmetry breaking.
+%{\color{red} Illustrate more on the effect of condensing domain walls with nontrivial PSG?}
+%
+%Naively, Eq.~(\ref{eq:dw_z4P_proj_rep}) seems indicate the nontrivial group extension.
+%However, by redefining $h\rightarrow \widetilde{g}h$ and use Eq.~(\ref{eq:dw_Pigg_action}), it turns out that $P$ and $h$ commute when acting on $\tau^z$.
+%In other words, the group extension here is trivial.
+%Thus, it is possible to have symmetric phases by condensing domain walls .
+
+To get a fully symmetric phase, the key step is to condense the bound state of $g$ domain wall and $h$-charge $\mu^x,~\nu^x$.
+In particular, the condensation pattern can be chosen as
 \begin{align}
-  P\cdot\widetilde{g}\cdot P^{-1}\circ\tau^z=\widetilde{g}^{-1}\circ\tau^z
-  \label{eq:dw_Pigg_action}
+  |\langle\tau_{2j-1/2}^z(\nu^x_{2j})^\dg\rangle|=|\langle\mu_{2j}^x\tau^z_{2j+1/2}\rangle|\neq0
+  \label{}
 \end{align}
-If $PSG$ corresponds to a nontrivial element in $H^2$, condensing domain walls would always leads to spontaneous symmetry breaking.
-{\color{red} Illustrate more on the effect of condensing domain walls with nontrivial PSG?}
+$|\langle\tau^z_{2j-1/2}(\mu^z_{2j})^\dg\rangle|=|\langle\mu^z_{2j}\tau^z_{2j+1/2}\rangle|=\alpha\neq0$.
+One can easily verify that under this condensation pattern, all local observables with non-zero expectation values are singlets under global symmetry action, which makes the condensing phase symmetric.
+Furthermore, according to Ref.~\onlinecite{ChenLuVishwanath2014} and discussion in Appendix~\ref{subapp:decorated_dw}, condensation of bound states of domain walls and symmetry charges leads to nontrivial SPT phases.
 
-Naively, Eq.~(\ref{eq:dw_z4P_proj_rep}) seems indicate the nontrivial group extension.
-However, by redefining $h\rightarrow \widetilde{g}h$ and use Eq.~(\ref{eq:dw_Pigg_action}), it turns out that $P$ and $h$ commute when acting on $\tau^z$.
-In other words, the group extension here is trivial.
-Thus, it is possible to have symmetric phases by condensing domain walls .
+%Let us summarize the argument about domain wall condensation, which would be helpful for us to generalize similar argument to high dimension.
+%\begin{enumerate}
+%  \item Gapped domain wall always leads to $Z_4^g$ symmetry breaking phases.  
+%    From gauge theory perspective, it is due to the fact gauge (spacetime) flux carries $Z_4^g$ charge. 
+%    Gapped gauge charge leads to condensation of flux in 1+1D, which spontaneously breaks $Z_4^g$ symmetry.  
+%  \item $PSG$ for domain walls~(or $\widetilde{Z_4^g}$ gauge charges) are trivial extension of $SG$ by $\widetilde{Z_4^g}$.
+%    However, condensing ``bare'' domain walls $\tau^z$ always gives spontaneous symmetry breaking phases.
+%  \item By condensing some bound state of domain wall $\tau^z$ and some global symmetry charge, we are able to get fully symmetric phases.
+%    As a result, the phase we obtained is SPT state with nontrivial edge zero modes.
+%\end{enumerate}
+From domain wall condensation picture, one also obtain the possible phases for other $\eta_0$.
+For example, when $\eta_0=1$, action of $h$ on domain walls becomes
+\begin{align}
+  h:\tau^z_{j+1/2}\rightarrow \ii^j\tau^z_{j+1/2}
+  \label{}
+\end{align}
+Thus, commutator between $h$ and $\sigma$ reads
+\begin{align}
+  h\sigma\circ\tau^z=\ii\sigma h\circ\tau^z=\widetilde{g}^3\sigma h\circ\tau^z
+  \label{}
+\end{align}
+In this case, domain walls transform projectively under symmetry actions, and thus condensing domain walls always breaks symmetry.
+On the other hand, for the case with $\eta_0=0$, we have $h\sigma\circ\tau^z=\sigma h\circ\tau^z$.
+One can safely condense ``bare'' domain wall $\tau^z$ without breaking any symmetry, which gives the trivial SPT phase.
 
-However, due to symmetry action defined in Eq.~(\ref{eq:z4_dw_sym_action}), it turns out that any condensation pattern of $\tau^z$ would lead to breaking of either $Z_4^h$ symmetry or $P$ symmetry.
-%Since domain walls are non-local variables, one needs to be more careful about the effect of domain wall condensation.
-%It is actually better to treat $\widetilde{g}$ as ``gauge symmetry'', and local observables should always carry trivial gauge charge under $\widetilde{g}$, which include terms as $(\tau^z)^\dg\tau^z$, $\tau^z\tau^z\tau^z\tau^z$, etc.
-%Condensation of $\tau^z$ leads to non-zero expectation value of some gauge-neutral terms.
-%Notice that the global symmetry representation of those terms is obtained by tensor product of the representation of single $\tau^z$.
-%Since $\tau^z$ carries non-Abelian representation under global symmetry group, as shown in Eq.~(\ref{eq:dw_z4P_proj_rep}), any gauge neutral term made of $\tau^z$ must also carry nontrivial symmetry charge, which leads to symmetry breaking phases.
-Let us give examples to illustrate the above argument.
-For example, let us consider condensation pattern to be $\langle\tau^z_{j+1/2}\rangle\neq0$ and is independent of $j$.
-It will preserve $P$ symmetry, but break $Z_4^h$ to $Z_2$ subgroup. 
-To see this, we consider local operator $(\tau^z_{2j-1/2})^\dg\tau^z_{2j+1/2}$. 
-Under $Z_4^h$ transformation, this operator obtains minus sign, thus carry two $Z_4^h$ charge.
-Then, with $\langle\tau^z_{j+1/2}\rangle\neq0$, this operator would pick nonzero expectation value and break $Z_4^h$ to $Z_2$.
-On the other hand, we may also condense $\tau^z_{2j+1/2}$ but leave $\tau^z_{2j-1/2}$ gapped.
-In this case, $Z_4^h$ is preserved, since $\tau^z_{2j+1/2}$ is invariant under $Z_4^h$ (up to some $\widetilde{Z_4^g}$ transformation).
-However, this condensation pattern would break $P$ symmetry.
-
-To obtain a fully symmetric phase, the key step is to condense the bound state of $g$ domain wall and $h$-charge $\tau^z\nu^z$ or $\tau^z(\nu^z)^\dg$.
-In particular, we choose the condensation pattern as $|\langle\tau^z_{2j-1/2}(\mu^z_{2j})^\dg\rangle|=|\langle\mu^z_{2j}\tau^z_{2j+1/2}\rangle|=\alpha\neq0$.
-It is straightforward to check that under this condensation pattern, all gauge neutral objects with non-zero expectation value are invariant under global symmetry action.
-Thus, we obtain a symmetric gapped phase.
-Furthermore, from decorated domain wall point of view[Chen,Lu,Vishwanath], condensation of bound states of domain walls and symmetry charges leads to SPT phases.
-
-The above condensation pattern also gives us hint to construct Hamiltonian realizing the symmetric phases.
-\ldots
-
-Now, let us summarize the argument about domain wall condensation, which would be helpful for us to generalize similar argument to high dimension.
-\begin{enumerate}
-  \item Gapped domain wall always leads to $Z_4^g$ symmetry breaking phases.  
-    From gauge theory perspective, it is due to the fact gauge (spacetime) flux carries $Z_4^g$ charge. 
-    Gapped gauge charge leads to condensation of flux in 1+1D, which spontaneously breaks $Z_4^g$ symmetry.  
-  \item $PSG$ for domain walls~(or $\widetilde{Z_4^g}$ gauge charges) are trivial extension of $SG$ by $\widetilde{Z_4^g}$.
-    However, condensing ``bare'' domain walls $\tau^z$ always gives spontaneous symmetry breaking phases.
-  \item By condensing some bound state of domain wall $\tau^z$ and some global symmetry charge, we are able to get fully symmetric phases.
-    As a result, the phase we obtained is SPT state with nontrivial edge zero modes.
-\end{enumerate}
-From domain wall condensation picture, one can also obtain the possible phases for other $\eta_0$.
-For example, when $\eta_0=1$, one is able to show $PSG$ now is a nontrivial extension of $SG$ by $\widetilde{Z_4^g}$.
-Thus, condensing domain walls would always give symmetry breaking phases.
-On the other hand, for the case with $\eta_0=0$, one is able to condensing ``bare'' domain wall $\tau^z$ without breaking any symmetry, which gives the trivial SPT phase.
-
-\subsection{Construction from spectral sequence}
+\subsection{Group cohomology calculation}
 {\color{red} Calculate group cohomology $H^2(Z_4^g\times Z_4^h\times Z_2^P,U_P(1))$ to show this SPT phase is not included in the conventional SPT classification.}
 
 
@@ -1459,7 +1465,7 @@ In this condensation framework, it turns out to be more convenient to study prop
 Let us discuss examples in various dimensions in the following.
 {\color{red} Study symmetry defects by (partially) gauging $SG$}
 
-\subsection{The simplest example: decorated domain walls in 1+1D}
+\subsection{The simplest example: decorated domain walls in 1+1D}\label{subapp:decorated_dw}
 Consider system with $Z_2^a\times Z_2^b$ symmetry, it is well known that there is an AKLT-like SPT phase, which is characterized by edge modes carrying projective representation of $Z_2^a\times Z_2^b$.
 As shown in Ref.~\onlinecite{ChenLuVishwanath2014}, starting from the ordered phase of $Z_2^a$, this SPT phase can be obtained by condensing the bound state of $Z_2^a$ domain wall and $Z_2^b$ charge.
 
